@@ -47308,6 +47308,14 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 4683
       objectReference: {fileID: 0}
+    - target: {fileID: 5931633780035197211, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931633780035197211, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.779
+      objectReference: {fileID: 0}
     - target: {fileID: 6046213131765031226, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
       value: 
