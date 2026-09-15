@@ -10,13 +10,13 @@
                     "name": "Basic Move",
                     "type": "Value",
                     "id": "c0d2e479-79b0-4d1a-b987-c777170092af",
-                    "expectedControlType": "Vector3",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Camera",
+                    "name": "Camera Direction",
                     "type": "Value",
                     "id": "59bfd3a2-7c66-4b7d-b323-1e7206874757",
                     "expectedControlType": "Delta",
@@ -46,7 +46,7 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "ecec876e-2019-40cb-a5a2-5bb8b7b0899d",
+                    "id": "3e75bb12-7569-4936-a087-68272879108c",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -57,10 +57,10 @@
                 },
                 {
                     "name": "up",
-                    "id": "63038975-e5b6-49e2-bba1-3a612cbb2802",
+                    "id": "424763eb-65e1-473b-8955-3ae4578499ca",
                     "path": "<Keyboard>/w",
                     "interactions": "",
-                    "processors": "NormalizeVector3",
+                    "processors": "",
                     "groups": ";Player Actions",
                     "action": "Basic Move",
                     "isComposite": false,
@@ -68,10 +68,10 @@
                 },
                 {
                     "name": "down",
-                    "id": "52a304c8-6412-466f-914e-14e997511af1",
+                    "id": "257d8458-d759-4816-896c-66647b0aa454",
                     "path": "<Keyboard>/s",
                     "interactions": "",
-                    "processors": "NormalizeVector3",
+                    "processors": "",
                     "groups": ";Player Actions",
                     "action": "Basic Move",
                     "isComposite": false,
@@ -79,10 +79,10 @@
                 },
                 {
                     "name": "left",
-                    "id": "5d6cfea8-3db7-4639-96ff-063137d2ab29",
+                    "id": "2a88651b-c865-4737-a86d-b41041cc2d2b",
                     "path": "<Keyboard>/a",
                     "interactions": "",
-                    "processors": "NormalizeVector3",
+                    "processors": "",
                     "groups": ";Player Actions",
                     "action": "Basic Move",
                     "isComposite": false,
@@ -90,14 +90,25 @@
                 },
                 {
                     "name": "right",
-                    "id": "0c4eff59-8d1b-4d8a-a95d-9195b4b62792",
+                    "id": "ba4e5213-9da1-4f9b-8402-3ab9718711f7",
                     "path": "<Keyboard>/d",
                     "interactions": "",
-                    "processors": "NormalizeVector3",
+                    "processors": "",
                     "groups": ";Player Actions",
                     "action": "Basic Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "98b56602-0028-46c7-b291-b58ee62d2c2e",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -106,7 +117,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Player Actions",
-                    "action": "Camera",
+                    "action": "Camera Direction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
