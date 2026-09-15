@@ -7738,7 +7738,7 @@ Transform:
   m_GameObject: {fileID: 411201710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.117, y: 3.2, z: -5.75}
+  m_LocalPosition: {x: -12.58, y: 3.2, z: -5.75}
   m_LocalScale: {x: 1, y: 2.405941, z: 1.2724}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7796,7 +7796,23 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c0d2e479-79b0-4d1a-b987-c777170092af
+    m_ActionName: 'Player/Basic Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 59bfd3a2-7c66-4b7d-b323-1e7206874757
+    m_ActionName: 'Player/Camera Direction[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab92a878-a565-4184-a354-034d661d65af
+    m_ActionName: 'Player/Run[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b284a5cd-a2d7-49f9-ba80-54a8ec0f625f
+    m_ActionName: 'Player/Get[/Mouse/leftButton,/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Player Actions
   m_DefaultActionMap: Player
