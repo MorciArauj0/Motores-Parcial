@@ -1,0 +1,167 @@
+{
+    "version": 1,
+    "name": "Player Move",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "f9fd8316-1cc5-4311-9358-3406430c1dc3",
+            "actions": [
+                {
+                    "name": "Basic Move",
+                    "type": "Value",
+                    "id": "c0d2e479-79b0-4d1a-b987-c777170092af",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Camera",
+                    "type": "Value",
+                    "id": "59bfd3a2-7c66-4b7d-b323-1e7206874757",
+                    "expectedControlType": "Delta",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "ab92a878-a565-4184-a354-034d661d65af",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Get",
+                    "type": "Button",
+                    "id": "b284a5cd-a2d7-49f9-ba80-54a8ec0f625f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "ecec876e-2019-40cb-a5a2-5bb8b7b0899d",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Basic Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "63038975-e5b6-49e2-bba1-3a612cbb2802",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "NormalizeVector3",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "52a304c8-6412-466f-914e-14e997511af1",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "NormalizeVector3",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "5d6cfea8-3db7-4639-96ff-063137d2ab29",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "NormalizeVector3",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0c4eff59-8d1b-4d8a-a95d-9195b4b62792",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "NormalizeVector3",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3023b40b-da17-4735-ae03-8f7b786e2ca2",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player Actions",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afc3495e-75f6-48dc-ab75-3348672ea5fc",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Press",
+                    "processors": "Normalize",
+                    "groups": ";Player Actions",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f6d05cf-d6ef-43b6-8f1e-244d76b7172c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player Actions",
+                    "action": "Get",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3bb5e1ac-e77a-445e-836f-9a3cba471186",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player Actions",
+                    "action": "Get",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Player Actions",
+            "bindingGroup": "Player Actions",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
