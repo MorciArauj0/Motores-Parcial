@@ -16,7 +16,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Camera",
+                    "name": "Camera Direction",
                     "type": "Value",
                     "id": "59bfd3a2-7c66-4b7d-b323-1e7206874757",
                     "expectedControlType": "Delta",
@@ -45,9 +45,9 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
-                    "id": "ecec876e-2019-40cb-a5a2-5bb8b7b0899d",
-                    "path": "2DVector",
+                    "name": "3D Vector",
+                    "id": "e335586f-91a2-4330-a979-160a7536e085",
+                    "path": "3DVector(mode=1)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -56,30 +56,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "63038975-e5b6-49e2-bba1-3a612cbb2802",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "NormalizeVector3",
-                    "groups": ";Player Actions",
-                    "action": "Basic Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "52a304c8-6412-466f-914e-14e997511af1",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "NormalizeVector3",
-                    "groups": ";Player Actions",
-                    "action": "Basic Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
-                    "id": "5d6cfea8-3db7-4639-96ff-063137d2ab29",
+                    "id": "2334191c-79ca-444d-b881-223da10cb66b",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "NormalizeVector3",
@@ -90,8 +68,30 @@
                 },
                 {
                     "name": "right",
-                    "id": "0c4eff59-8d1b-4d8a-a95d-9195b4b62792",
+                    "id": "2916a018-2d5f-424b-aa95-2b17070f6e5f",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "NormalizeVector3",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "forward",
+                    "id": "66b6145b-e78e-4f96-8f82-a24581afe924",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "NormalizeVector3",
+                    "groups": ";Player Actions",
+                    "action": "Basic Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "backward",
+                    "id": "22063d94-8028-4233-91d7-554be2672ed0",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "NormalizeVector3",
                     "groups": ";Player Actions",
@@ -106,7 +106,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Player Actions",
-                    "action": "Camera",
+                    "action": "Camera Direction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
