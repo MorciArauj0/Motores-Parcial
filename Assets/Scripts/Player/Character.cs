@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Unity.Cinemachine;
 
 public class Character : MonoBehaviour
 {
@@ -40,8 +41,7 @@ public class Character : MonoBehaviour
 
 
     private float speed;
-    private float rotate;
-
+    private float pitch = 0f;
 
     void Start()
     {
@@ -50,7 +50,6 @@ public class Character : MonoBehaviour
 
         speed = normalSpeed;
     }
-    
 
     void Update()
     {
@@ -64,19 +63,13 @@ public class Character : MonoBehaviour
         else
             speed = normalSpeed;
 
+
         look = playerInput.actions["Camera Direction"].ReadValue<Vector2>();
 
 
         HandleMovement();
         HandleLook();
     }
-
-
-    void FixedUpdate()
-    {
-        
-    }
-
 
     private void HandleMovement()
     {
@@ -96,6 +89,10 @@ public class Character : MonoBehaviour
     {
         float mouseX = look.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
+
+        pitch -= look.y * rotationSpeed * Time.deltaTime;
+        pitch = Mathf.Clamp(pitch, -90f, 90f);
+        cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
     }
 
 }
