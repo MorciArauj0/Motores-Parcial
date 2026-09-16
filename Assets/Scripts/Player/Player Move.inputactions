@@ -34,12 +34,12 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Get",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "b284a5cd-a2d7-49f9-ba80-54a8ec0f625f",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -148,7 +148,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Player Actions",
-                    "action": "Get",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -159,7 +159,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Player Actions",
-                    "action": "Get",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
