@@ -59,7 +59,6 @@ public class Character : MonoBehaviour
     {
         inputVector = playerInput.actions["Basic Move"].ReadValue<Vector2>();
 
-
         bool running = playerInput.actions["Run"].IsPressed();
 
         if (running)
@@ -73,6 +72,8 @@ public class Character : MonoBehaviour
 
         HandleMovement();
         HandleLook();
+
+        HandleInteract();
     }
 
     private void HandleMovement()
@@ -97,6 +98,31 @@ public class Character : MonoBehaviour
         pitch -= look.y * rotationSpeed * Time.deltaTime;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+    }
+
+    /// <summary>
+    /// prueba y error
+    /// </summary>
+    bool interact = false;
+    public bool publicInteracting => interacting;
+    bool interacting = false;
+
+    private void HandleInteract()
+    {
+
+        interact = playerInput.actions["Interact"].IsPressed();
+        
+        if(interact && !interacting)
+        {
+            Debug.Log("interactuando");
+            interacting = true;
+        }
+        else if (!interact && interacting)
+        {
+            interacting = false;
+            Debug.Log("no interactuas");
+        }
+        
     }
 
 }
