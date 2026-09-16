@@ -7544,10 +7544,20 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!23 &390029090 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3186005832082553750, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1649500547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &411201714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8364363761314378331, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
   m_PrefabInstance: {fileID: 1950424366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &413415424 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3185940344315319334, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
+  m_PrefabInstance: {fileID: 8920167748573410928}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &413460862
 Mesh:
@@ -7854,6 +7864,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObjects
   id: 1
   missingObject: {fileID: 602015427}
+--- !u!23 &441304965 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5700945446014085228, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1649500547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &443564161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8942579841844641558, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
@@ -10656,7 +10671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   loopDuracion: 300
-  loopsRestantes: 5
+  loopsRestantes: 12
 --- !u!4 &584034355
 Transform:
   m_ObjectHideFlags: 0
@@ -10811,6 +10826,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8690708738687310815, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
   m_PrefabInstance: {fileID: 1950424366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &608081113 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3074107405526417674, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1649500547}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &609381879
 Mesh:
@@ -11268,6 +11288,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8245628458794225110, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
   m_PrefabInstance: {fileID: 633956764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &634143005 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3185940344315319334, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
+  m_PrefabInstance: {fileID: 1792970928511755658}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &640898825
 Mesh:
@@ -12935,6 +12960,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!23 &707875068 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8601987822304658001, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1911382375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &714997679
 Mesh:
   m_ObjectHideFlags: 0
@@ -13647,6 +13677,65 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &739732070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739732072}
+  - component: {fileID: 739732071}
+  m_Layer: 0
+  m_Name: ControladorLuces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739732071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739732070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093f4216a70f8934797978fde441d28c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlLuces
+  luces:
+  - {fileID: 707875068}
+  - {fileID: 1462174615}
+  - {fileID: 2050152670}
+  - {fileID: 1758735478}
+  - {fileID: 1047934408}
+  - {fileID: 634143005}
+  - {fileID: 413415424}
+  - {fileID: 3623367293542402864}
+  - {fileID: 1335828418}
+  - {fileID: 390029090}
+  - {fileID: 441304965}
+  - {fileID: 608081113}
+  prendida: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  apagada: {r: 0, g: 0, b: 0, a: 1}
+--- !u!4 &739732072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739732070}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.99266, y: 1.25644, z: -13.34525}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &775758788
 Mesh:
   m_ObjectHideFlags: 0
@@ -18155,6 +18244,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!23 &1047934408 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3185940344315319334, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
+  m_PrefabInstance: {fileID: 4879501464116223053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1070606745
 GameObject:
   m_ObjectHideFlags: 0
@@ -25944,6 +26038,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   character: {fileID: 0}
   id: 2
+--- !u!23 &1335828418 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8601987822304658001, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1649500547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1340690969 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
@@ -26505,6 +26604,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!23 &1462174615 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3186005832082553750, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1911382375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1468980249
 Mesh:
   m_ObjectHideFlags: 0
@@ -30501,6 +30605,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 6614
       objectReference: {fileID: 0}
+    - target: {fileID: 150821796382651408, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara10
+      objectReference: {fileID: 0}
     - target: {fileID: 251186518906287621, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -30508,6 +30616,10 @@ PrefabInstance:
     - target: {fileID: 251186518906287621, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_VersionIndex
       value: 3145
+      objectReference: {fileID: 0}
+    - target: {fileID: 326590784743706252, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara12
       objectReference: {fileID: 0}
     - target: {fileID: 403048042647978150, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
@@ -30769,6 +30881,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 3699
       objectReference: {fileID: 0}
+    - target: {fileID: 6431495041359334871, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara9
+      objectReference: {fileID: 0}
     - target: {fileID: 6509025695893628602, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -30844,6 +30960,10 @@ PrefabInstance:
     - target: {fileID: 6942087787806991871, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_VersionIndex
       value: 3148
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006747107102074858, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara11
       objectReference: {fileID: 0}
     - target: {fileID: 7073373227126762517, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
@@ -32402,6 +32522,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1758735478 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3074107405526417674, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1911382375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1782276729
 Mesh:
   m_ObjectHideFlags: 0
@@ -34469,6 +34594,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 6614
       objectReference: {fileID: 0}
+    - target: {fileID: 150821796382651408, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara2
+      objectReference: {fileID: 0}
     - target: {fileID: 251186518906287621, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -34476,6 +34605,10 @@ PrefabInstance:
     - target: {fileID: 251186518906287621, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_VersionIndex
       value: 3145
+      objectReference: {fileID: 0}
+    - target: {fileID: 326590784743706252, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara4
       objectReference: {fileID: 0}
     - target: {fileID: 403048042647978150, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
@@ -34761,6 +34894,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 3699
       objectReference: {fileID: 0}
+    - target: {fileID: 6431495041359334871, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara1
+      objectReference: {fileID: 0}
     - target: {fileID: 6509025695893628602, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -34836,6 +34973,10 @@ PrefabInstance:
     - target: {fileID: 6942087787806991871, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_VersionIndex
       value: 3148
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006747107102074858, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+      propertyPath: m_Name
+      value: Lampara3
       objectReference: {fileID: 0}
     - target: {fileID: 7073373227126762517, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
       propertyPath: m_Mesh
@@ -37201,6 +37342,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!23 &2050152670 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5700945446014085228, guid: 6b39ed859303e024bbf3f3654f465471, type: 3}
+  m_PrefabInstance: {fileID: 1911382375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2051019922
 Mesh:
   m_ObjectHideFlags: 0
@@ -38687,6 +38833,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 6617
       objectReference: {fileID: 0}
+    - target: {fileID: 150764134585883552, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
+      propertyPath: m_Name
+      value: Lampara6
+      objectReference: {fileID: 0}
     - target: {fileID: 547270334257424647, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -38936,7 +39086,7 @@ GameObject:
   - component: {fileID: 5002132847355184802}
   - component: {fileID: 3225275653739284218}
   m_Layer: 0
-  m_Name: Lampara
+  m_Name: Lampara8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40075,6 +40225,10 @@ PrefabInstance:
     - target: {fileID: 135120446438430809, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
       propertyPath: m_VersionIndex
       value: 6575
+      objectReference: {fileID: 0}
+    - target: {fileID: 150764134585883552, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
+      propertyPath: m_Name
+      value: Lampara5
       objectReference: {fileID: 0}
     - target: {fileID: 547270334257424647, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
       propertyPath: m_Mesh
@@ -41921,6 +42075,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 6617
       objectReference: {fileID: 0}
+    - target: {fileID: 150764134585883552, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
+      propertyPath: m_Name
+      value: Lampara7
+      objectReference: {fileID: 0}
     - target: {fileID: 547270334257424647, guid: 97a1236cdacf08b4e9a27472cd826763, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -42364,3 +42522,4 @@ SceneRoots:
   - {fileID: 415417643}
   - {fileID: 842686241}
   - {fileID: 584034355}
+  - {fileID: 739732072}
