@@ -23546,6 +23546,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1276741017 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6776116028866236270, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
+  m_PrefabInstance: {fileID: 1950424366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f963529ed7ea2a449ee4bdf54147c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
 --- !u!43 &1277974600
 Mesh:
   m_ObjectHideFlags: 0
@@ -25724,8 +25735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5364dbfb1c347a488ae4e72b79b450a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
-  character: {fileID: 0}
-  id: 0
+  character: {fileID: 1276741017}
+  id: 2
 --- !u!1 &1340690969 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
@@ -35260,6 +35271,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8690708738687310815, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690708738687310815, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
