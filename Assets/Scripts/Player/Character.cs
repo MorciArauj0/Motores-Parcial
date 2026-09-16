@@ -99,23 +99,23 @@ public class Character : MonoBehaviour
     /// <summary>
     /// prueba y error
     /// </summary>
-    bool interact;
-    public bool interacting => interact;
-    bool interact1;
+    bool interact = false;
+    public bool publicInteracting => interacting;
+    bool interacting = false;
 
     private void HandleInteract()
     {
 
         interact = playerInput.actions["Interact"].IsPressed();
         
-        if(interact && interact1)
+        if(interact && !interacting)
         {
             Debug.Log("interactuando");
-            interact1 = false;
+            interacting = true;
         }
-        else if (!interact && !interact1)
+        else if (!interact && interacting)
         {
-            interact1 = true;
+            interacting = false;
             Debug.Log("no interactuas");
         }
         

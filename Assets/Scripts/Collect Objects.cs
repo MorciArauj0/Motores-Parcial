@@ -13,10 +13,8 @@ public class CollectObjects : MonoBehaviour, ICollectable
 
     public void Collect()
     {
-        if(character.interacting == true)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
+        Debug.Log("coleva0");
     }
 
     void Start()
@@ -24,11 +22,13 @@ public class CollectObjects : MonoBehaviour, ICollectable
         character = GetComponent<Character>();
     }
 
-   void OnCollisionStay(Collision collision)
+   void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player") && character.interacting == true)
+        Character character = other.GetComponent<Character>();
+        if(character != null && character.publicInteracting == true)
         {
-            Collect();
+                Collect();
         }
     }
+
 }
