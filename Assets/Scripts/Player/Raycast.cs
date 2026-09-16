@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 public class Raycast : MonoBehaviour
 {
     public LayerMask layermask;
+    float radius = 1f;
 
     void Update()
     {
         //todo lo que esta aca en update es visual, despues lo podemos borrar pero me parece mas util mantenerlo por ahora asi vemos las lineas
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 10f))
+        if(Physics.SphereCast(transform.position, radius, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 10f, layermask))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.red);
         }
@@ -19,9 +20,9 @@ public class Raycast : MonoBehaviour
         }
     }
 
-    public void OnGet(InputValue value)
+    public void OnInteract(InputValue value)
     {
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 10f))
+        if (Physics.SphereCast(transform.position, radius, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 10f, layermask))
         {
             GameObject target = hitinfo.collider.gameObject;
 
