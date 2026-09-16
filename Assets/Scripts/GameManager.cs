@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Configuración del Loop")]
-    [SerializeField] private float loopDuracion = 300f;
-    [SerializeField] private int loopsRestantes = 5;
+    [SerializeField] public float loopDuracion = 300f;
+    [SerializeField] public int loopsRestantes = 5;
     private float timer = 0f;
 
     void Awake()
