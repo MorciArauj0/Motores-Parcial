@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Unity.Cinemachine;
 
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(PlayerInput))]
+
 public class Character : MonoBehaviour
 {
     //============================================
@@ -23,8 +26,9 @@ public class Character : MonoBehaviour
 
 
     [Header("Objeto")]
-    [SerializeField] private GameObject objectPrefab;
+  //[SerializeField] private GameObject objectPrefab;
 
+    //[SerializeField] private float gravity = -9.8f;
 
 
     //============================================
