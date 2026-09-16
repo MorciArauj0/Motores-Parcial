@@ -25,7 +25,7 @@ public class CollectObjects : MonoBehaviour, ICollectable
    void OnTriggerStay(Collider other)
     {
         Character character = other.GetComponent<Character>();
-        if(character != null && character.publicInteracting == true)
+        if(character != null && character.IsInteracting == true)
         {
                 Collect();
         }

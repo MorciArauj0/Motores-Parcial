@@ -46,6 +46,8 @@ public class Character : MonoBehaviour
 
     private float speed;
     private float pitch = 0f;
+    public bool IsInteracting => playerInput.actions["Interact"].IsPressed();
+
 
     void Start()
     {
@@ -72,8 +74,6 @@ public class Character : MonoBehaviour
 
         HandleMovement();
         HandleLook();
-
-        HandleInteract();
     }
 
     private void HandleMovement()
@@ -98,31 +98,6 @@ public class Character : MonoBehaviour
         pitch -= look.y * rotationSpeed * Time.deltaTime;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
-    }
-
-    /// <summary>
-    /// prueba y error
-    /// </summary>
-    bool interact = false;
-    public bool publicInteracting => interacting;
-    bool interacting = false;
-
-    private void HandleInteract()
-    {
-
-        interact = playerInput.actions["Interact"].IsPressed();
-        
-        if(interact && !interacting)
-        {
-            Debug.Log("interactuando");
-            interacting = true;
-        }
-        else if (!interact && interacting)
-        {
-            interacting = false;
-            Debug.Log("no interactuas");
-        }
-        
     }
 
 }

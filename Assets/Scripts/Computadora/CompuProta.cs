@@ -63,7 +63,7 @@ public class CompuProta : MonoBehaviour
 
     private void Update()
     {
-        if (jugador != null && jugador.publicInteracting && !unMensaje)
+        if (jugador != null && jugador.IsInteracting && !unMensaje)
         {
             MostrarSiguienteMensaje(); // para testear
             unMensaje = true;
