@@ -1,28 +1,46 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Character : MonoBehaviour
 {
-    //MOVIMIENTO
+    //============================================
+    //MOVIMIENTO/VARIABLES
+    //============================================
 
-    //velocidades del pj
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float speedRun = 15f;
-    private float currentSpeed;
-
-
-    //rotación del pj
-    //[SerializeField] private float rotationSpeed = 120f;
+    [Header("Velocidades")]
+    [SerializeField] private float normalSpeed = 10f;
+    [SerializeField] private float sprintSpeed = 15f;
 
 
-    //REFERENCIAS
+    [Header("Rotación")]
+    [SerializeField] private float rotationSpeed = 120f;
+
+
+    [Header("Cámara")]
+    [SerializeField] private Transform cameraTransform;
+
+
+    [Header("Objeto")]
+    [SerializeField] private GameObject objectPrefab;
+
+
+
+    //============================================
+    //REFERENCIAS Y VARIABLES INTERNAS
+    //============================================
+
     private PlayerInput playerInput;
     private CharacterController characterController;
 
 
-    //vector
+    [Header("Vector")]
     private Vector2 inputVector;
+    private Vector2 look;
 
+
+    private float speed;
+    private float rotate;
 
 
     void Start()
@@ -30,7 +48,7 @@ public class Character : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
 
-        currentSpeed = speed;
+        speed = normalSpeed;
     }
     
 
@@ -42,19 +60,42 @@ public class Character : MonoBehaviour
         bool running = playerInput.actions["Run"].IsPressed();
 
         if (running)
-            currentSpeed = speedRun;
+            speed = sprintSpeed;
         else
-            currentSpeed = speed;
+            speed = normalSpeed;
+
+        look = playerInput.actions["Camera Direction"].ReadValue<Vector2>();
+
+
+        HandleMovement();
+        HandleLook();
     }
 
 
     void FixedUpdate()
     {
-        Vector3 move = new Vector3(inputVector.x, 0f, inputVector.y);
-
-        characterController.Move(move * currentSpeed * Time.fixedDeltaTime);
+        
     }
 
 
+    private void HandleMovement()
+    {
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 move = (forward * inputVector.y) + (right * inputVector.x);
+        characterController.Move(move * speed * Time.deltaTime);
+    }
+
+    private void HandleLook()
+    {
+        float mouseX = look.x * rotationSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up * mouseX);
+    }
 
 }
