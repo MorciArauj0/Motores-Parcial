@@ -7934,6 +7934,7 @@ GameObject:
   - component: {fileID: 443630036}
   - component: {fileID: 443630035}
   - component: {fileID: 443630034}
+  - component: {fileID: 443630037}
   m_Layer: 0
   m_Name: Papel
   m_TagString: Untagged
@@ -8036,6 +8037,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443630032}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &443630037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443630032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5364dbfb1c347a488ae4e72b79b450a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
+  character: {fileID: 1276741017}
+  id: 0
 --- !u!43 &454884457
 Mesh:
   m_ObjectHideFlags: 0
@@ -14630,6 +14645,7 @@ GameObject:
   - component: {fileID: 846538568}
   - component: {fileID: 846538567}
   - component: {fileID: 846538566}
+  - component: {fileID: 846538569}
   m_Layer: 0
   m_Name: Obj faltante de cuadro
   m_TagString: Untagged
@@ -14730,6 +14746,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846538564}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &846538569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846538564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5364dbfb1c347a488ae4e72b79b450a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
+  character: {fileID: 1276741017}
+  id: 1
 --- !u!43 &877480699
 Mesh:
   m_ObjectHideFlags: 0
