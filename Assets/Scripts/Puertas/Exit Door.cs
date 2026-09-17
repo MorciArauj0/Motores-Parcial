@@ -18,7 +18,7 @@ public class ExitDoor : MonoBehaviour
         Debug.Log("OnTriggerEnter con: " + other.gameObject.name);
 
         Character character = other.gameObject.GetComponentInParent<Character>();
-        if(character != null && finalSign == true)
+        if(character != null && finalSign.activeSelf)
         {
             UnlockDoor();
         }
