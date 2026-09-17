@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Raycast : MonoBehaviour
 {
+    [Header("Variables")]
     public LayerMask layermask;
     float radius = 1f;
 

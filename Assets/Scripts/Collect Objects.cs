@@ -27,7 +27,7 @@ public class CollectObjects : MonoBehaviour, ICollectable
         Character character = other.GetComponent<Character>();
         if(character != null && character.IsInteracting == true)
         {
-                Collect();
+            Collect();
         }
     }
 

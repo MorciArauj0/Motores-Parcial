@@ -3,6 +3,7 @@ using UnityEngine.ProBuilder.Shapes;
 
 public class Puertabaño : MonoBehaviour, IInteractable
 {
+    [Header("Variables")]
     public float openAngle = 90f;
 
     [SerializeField] private GameObject pivot;
