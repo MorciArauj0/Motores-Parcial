@@ -26,7 +26,7 @@ public class Character : MonoBehaviour
 
 
     [Header("Objeto")]
-  //[SerializeField] private GameObject objectPrefab;
+    //[SerializeField] private GameObject objectPrefab;
 
     //[SerializeField] private float gravity = -9.8f;
 
