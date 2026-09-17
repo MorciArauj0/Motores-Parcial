@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
     [Header("Objeto")]
     //[SerializeField] private GameObject objectPrefab;
 
+    //por el momento no necesitamos salto (y tampoco creo que necesitemos en el futuro), pero dejo la variable de gravedad por la dudas
     //[SerializeField] private float gravity = -9.8f;
 
 
