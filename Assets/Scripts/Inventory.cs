@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [Header("Variables")]
     Character character;
-    public event Action<Inventory> OnInventoryChange;
-
     [SerializeField] private List<ItemID> InventoryList = new List<ItemID>();
 
-    public void OnTriggerStay(Collider other)
-    {
-        CollectObjects item = other.gameObject.GetComponent<CollectObjects>();
-        if (item != null && character.IsInteracting == true)
-        {
-            Debug.Log("al iventario");
-            InventoryList.Add(item.ID);
-            //Destroy(other.gameObject);
-            //OnInventoryChange.Invoke(???);
-            //Una variable que indique el estado de la lista
-        }
-    }
 
     void Start()
     {
         character = GetComponent<Character>();
     }
 
+    public void AddItem(ItemID id)
+    {
+        InventoryList.Add(id);
+        Debug.Log("al inventario" + id);
+    }
 
+    public bool HasItem(ItemID id)
+    {
+        return InventoryList.Contains(id);
+    }
+
+    public void RemoveItem(ItemID id)
+    {
+        InventoryList.Remove(id);
+    }
+    
 }
