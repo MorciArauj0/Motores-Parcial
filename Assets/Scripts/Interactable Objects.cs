@@ -11,13 +11,30 @@ public class InteractableObjects : MonoBehaviour, IInteractable
     [SerializeField] private InteractableItemID id;
     public InteractableItemID ID => id;
 
+    [SerializeField] Inventory inventory;
+    [SerializeField] private ItemID itemMust;
 
-    //Puzzle del baño y cuadro (Creo que esta mal)
+
     [SerializeField] private GameObject missingObject;
+    [SerializeField] private GameObject dropObject;
+
+
+    //hola
     public void Interact()
     {
-        missingObject.SetActive(true);
-    }
+        if (inventory != null && inventory.HasItem(itemMust))
+        {
+            inventory.RemoveItem(itemMust);
 
+            missingObject.SetActive(true);
+            if (dropObject != null) dropObject.SetActive(true);
+
+            Debug.Log("A veer si anda, item usado!!");
+        }
+        else
+        {
+            Debug.Log("Necesitas este item:" + itemMust);
+        }
+    }
 
 }

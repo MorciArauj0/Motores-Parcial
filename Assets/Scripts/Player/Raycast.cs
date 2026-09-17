@@ -7,6 +7,8 @@ public class Raycast : MonoBehaviour
     [Header("Variables")]
     public LayerMask layermask;
     float radius = 1f;
+    public Inventory inventory;
+
 
     void Update()
     {
@@ -38,6 +40,7 @@ public class Raycast : MonoBehaviour
             ICollectable collectable = target.GetComponent<ICollectable>();
             if (collectable != null)
             {
+                inventory.AddItem(collectable.ID);
                 collectable.Collect();
                 return;
             }
