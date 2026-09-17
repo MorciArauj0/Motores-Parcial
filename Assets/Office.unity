@@ -1108,7 +1108,8 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 10391
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4796866288327561136, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1477,6 +1478,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &77632781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 5997749300311934982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &87518759
 Mesh:
   m_ObjectHideFlags: 0
@@ -8420,7 +8426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
   openAngle: 90
-  pivot: {fileID: 602015427}
+  pivot: {fileID: 77632781}
 --- !u!43 &504359651
 Mesh:
   m_ObjectHideFlags: 0
@@ -34134,6 +34140,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1905498918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 1909715093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1905955977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
@@ -34179,7 +34190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
   openAngle: 90
-  pivot: {fileID: 602015427}
+  pivot: {fileID: 1905498918}
 --- !u!1001 &1909715093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34260,7 +34271,8 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 10349
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4796866288327561136, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8245628458794225110, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
@@ -38022,7 +38034,8 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 10391
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4796866288327561136, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -38736,7 +38749,8 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 10391
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4796866288327561136, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

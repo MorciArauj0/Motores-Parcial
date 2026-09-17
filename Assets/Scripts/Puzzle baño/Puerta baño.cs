@@ -8,11 +8,18 @@ public class Puertabaño : MonoBehaviour, IInteractable
     [SerializeField] private GameObject pivot;
     private Quaternion openRotation;
     private Quaternion closedRotation;
+    private bool isOpen = false;
 
+    void Start()
+    {
+        closedRotation = pivot.transform.localRotation;
+        openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+    }
 
     public void Interact()
     {
-        openRotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, openAngle, 0));
-        Debug.Log ("Se abrio");
+        isOpen = !isOpen;
+
+        pivot.transform.localRotation = isOpen ? openRotation : closedRotation;
     }
 }
