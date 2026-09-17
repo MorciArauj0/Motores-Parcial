@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         if (loopsRestantes <= 0)
         {
             Debug.Log("se terminaron los loops");
+            SceneManager.LoadScene("GameOver");
         }
         else { 
             Debug.Log("quedan " +  loopsRestantes + " loops restantes");
