@@ -727,7 +727,6 @@ GameObject:
   - component: {fileID: 5415267566540109226}
   - component: {fileID: 6776116028866236270}
   - component: {fileID: -4543836241902810351}
-  - component: {fileID: -1769228339168964602}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -851,16 +850,3 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1769228339168964602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8690708738687310815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5270ab714e56f4fac5569efa9d8460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  InventoryList: 

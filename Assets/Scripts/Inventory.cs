@@ -1,13 +1,9 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class Inventory : MonoBehaviour
 {
-
     Character character;
     public event Action<Inventory> OnInventoryChange;
 
@@ -16,7 +12,7 @@ public class Inventory : MonoBehaviour
     public void OnTriggerStay(Collider other)
     {
         CollectObjects item = other.gameObject.GetComponent<CollectObjects>();
-        if(item != null && character.publicInteracting == true)
+        if (item != null && character.IsInteracting == true)
         {
             Debug.Log("al iventario");
             InventoryList.Add(item.ID);
@@ -30,4 +26,6 @@ public class Inventory : MonoBehaviour
     {
         character = GetComponent<Character>();
     }
+
+
 }

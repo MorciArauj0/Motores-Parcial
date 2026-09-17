@@ -41,15 +41,6 @@
                     "processors": "",
                     "interactions": "Tap",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "horizontal",
-                    "type": "Value",
-                    "id": "1064998a-ea5d-41ca-a3ed-5efb4b7ef6db",
-                    "expectedControlType": "Delta",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -160,17 +151,6 @@
                     "processors": "",
                     "groups": ";Player Actions",
                     "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f283cf8a-d274-46db-a230-ea70185482b0",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Player Actions",
-                    "action": "horizontal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
