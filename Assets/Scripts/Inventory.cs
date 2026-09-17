@@ -29,5 +29,5 @@ public class Inventory : MonoBehaviour
     {
         InventoryList.Remove(id);
     }
-    |
+    
 }
