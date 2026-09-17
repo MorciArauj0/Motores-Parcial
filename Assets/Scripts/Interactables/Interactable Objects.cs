@@ -16,19 +16,32 @@ public class InteractableObjects : MonoBehaviour, IInteractable
 
 
     [SerializeField] private GameObject missingObject;
-    [SerializeField] private GameObject dropObject;
+    [SerializeField] private GameObject dropObjectPrefab;
+    [SerializeField] private Transform spawnPoint;
 
+    private bool resuelto = false;
 
-    //hola
     public void Interact()
     {
+        if (resuelto)
+        {
+            return;
+        }
+
         if (inventory != null && inventory.HasItem(itemMust))
         {
             inventory.RemoveItem(itemMust);
 
-            missingObject.SetActive(true);
-            if (dropObject != null) dropObject.SetActive(true);
+            if (missingObject != null) missingObject.SetActive(true);
 
+            if (dropObjectPrefab != null)
+            {
+                Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
+                Quaternion rot = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
+                Instantiate(dropObjectPrefab, pos, rot);
+            }
+
+            resuelto = true;
             Debug.Log("A veer si anda, item usado!!");
         }
         else
