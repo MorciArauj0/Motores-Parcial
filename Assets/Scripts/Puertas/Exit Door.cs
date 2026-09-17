@@ -10,12 +10,14 @@ public class ExitDoor : MonoBehaviour
 
     public void UnlockDoor()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene("Victory");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Character character = collision.gameObject.GetComponent<Character>();
+        Debug.Log("OnTriggerEnter con: " + other.gameObject.name);
+
+        Character character = other.gameObject.GetComponentInParent<Character>();
         if(character != null && finalSign == true)
         {
             UnlockDoor();
