@@ -5,6 +5,7 @@ public enum InteractableItemID
 {
     door, drawer, computer, painting
 }
+
 public class InteractableObjects : MonoBehaviour, IInteractable
 {
     [SerializeField] private InteractableItemID id;

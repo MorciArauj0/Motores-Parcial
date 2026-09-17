@@ -1031,6 +1031,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1909715094}
     m_Modifications:
+    - target: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8166451540537089454, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1102,13 +1106,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 59304752}
   m_SourcePrefab: {fileID: 100100000, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
 --- !u!4 &59304749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8245628458794225110, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
   m_PrefabInstance: {fileID: 59304748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &59304750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 59304748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &59304751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 59304748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &59304752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59304750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c110a344a3e09140ad6d5ff9046217d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
+  openAngle: 90
+  pivot: {fileID: 59304751}
 --- !u!43 &62305007
 Mesh:
   m_ObjectHideFlags: 0
@@ -11196,6 +11227,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1856175135}
     m_Modifications:
+    - target: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2110968830220731344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -34467,6 +34502,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1233104559}
     m_Modifications:
+    - target: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8166451540537089454, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -34543,13 +34582,40 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8245628458794225110, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 59304749}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1909715097}
   m_SourcePrefab: {fileID: 100100000, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
 --- !u!4 &1909715094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8245628458794225110, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
   m_PrefabInstance: {fileID: 1909715093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909715095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 1909715093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909715096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 1909715093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1909715097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909715095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c110a344a3e09140ad6d5ff9046217d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
+  openAngle: 90
+  pivot: {fileID: 1909715096}
 --- !u!1001 &1911382375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38001,6 +38067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1909715094}
     m_Modifications:
+    - target: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2110968830220731344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -40935,6 +41005,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1909715094}
     m_Modifications:
+    - target: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3258496066816188955, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -41018,8 +41092,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5997749300311934985}
   m_SourcePrefab: {fileID: 100100000, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+--- !u!1 &5997749300311934983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1515719257883433344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 5997749300311934982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5997749300311934984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4563579521790197378, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
+  m_PrefabInstance: {fileID: 5997749300311934982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5997749300311934985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997749300311934983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c110a344a3e09140ad6d5ff9046217d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
+  openAngle: 90
+  pivot: {fileID: 5997749300311934984}
 --- !u!65 &6328462655499158261
 BoxCollider:
   m_ObjectHideFlags: 0
