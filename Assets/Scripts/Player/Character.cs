@@ -24,6 +24,10 @@ public class Character : MonoBehaviour
     [Header("Cámara")]
     [SerializeField] private Transform cameraTransform;
 
+    [Header("Animaciones")]
+    [SerializeField] private Animator animator;
+    public float vel = 0f;
+    public bool IsMoving;
 
     [Header("Objeto")]
     //[SerializeField] private GameObject objectPrefab;
@@ -56,6 +60,7 @@ public class Character : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         speed = normalSpeed;
+        IsMoving = false;
     }
 
     void Update()
@@ -70,8 +75,10 @@ public class Character : MonoBehaviour
             speed = normalSpeed;
 
 
+
         look = playerInput.actions["Camera Direction"].ReadValue<Vector2>();
 
+        animator.SetBool("IsMoving", IsMoving);
 
         HandleMovement();
         HandleLook();
@@ -89,6 +96,15 @@ public class Character : MonoBehaviour
 
         Vector3 move = (forward * inputVector.y) + (right * inputVector.x);
         characterController.Move(move * speed * Time.deltaTime);
+
+        //if (vel == 0.5f)
+        //{
+        //    IsMoving = true;
+        //}
+        //else
+        //{
+        //    IsMoving = false;
+        //}
     }
 
     private void HandleLook()
