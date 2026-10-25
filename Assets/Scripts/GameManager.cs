@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int loopsRestantes = 5;
     private float timer = 0f;
 
+
+
     void Awake()
     {
         if (Instance == null)
@@ -23,6 +25,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //bloquear mouse
+    //void Start()
+    //{
+    //    Cursor.lockState = CursorLockMode.Locked;
+    //    Cursor.visible = false;
+    //}
 
     void Update()
     {
