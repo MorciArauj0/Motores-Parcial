@@ -7,5 +7,6 @@ public class PuertaNormal : MonoBehaviour, IInteractable
     public void Interact()
     {
         puerta.Toggle();
+        Debug.Log("abrir puerta");
     }
 }
