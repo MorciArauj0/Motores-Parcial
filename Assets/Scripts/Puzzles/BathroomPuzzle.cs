@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class BathroomPuzzle : MonoBehaviour
@@ -31,11 +32,23 @@ public class BathroomPuzzle : MonoBehaviour
     void Update()
     {
         //recolección de objetos
-        Vector3 rotacionPuerta = correctDoor.transform.eulerAngles;
-        if (bathroomCollect == null)
+        Vector3 rotacionPuertaCorrecta = correctDoor.transform.eulerAngles;
+
+        for (int i = 0; i <= 2; i++)
         {
-            collectComplete = true;
+            if (bathroomCollect[i].activeSelf == true)
+            { 
+                collectComplete = false;
+                break;
+            }
+            else
+            {
+                collectComplete = true;
+                if (Keyboard.current.gKey.wasPressedThisFrame) { Debug.Log("listo colecta"); }
+            }
         }
+        
+
 
         //colocar objetos
         if(inventory.HasItem(vase) || inventory.HasItem(broom) || inventory.HasItem(paper))
@@ -45,6 +58,7 @@ public class BathroomPuzzle : MonoBehaviour
         else
         {
             allObjectsSetted = true;
+            if (Keyboard.current.qKey.wasPressedThisFrame) { Debug.Log("pusiste todo, tal vez"); }
         }
 
         //puertas
@@ -52,31 +66,37 @@ public class BathroomPuzzle : MonoBehaviour
         {
             int doorsClosed = 0;
             Vector3 rotacion = bathroomCollect[i].transform.eulerAngles;
-            if(rotacion != new Vector3 (0, 0, 0))
+            Vector3 cerrado = new Vector3 (0, 0, 0);
+            if(rotacion != cerrado)
             {
                 doorsClosed++;
-                break;
+                if (doorsClosed == 3)
+                {
+                    allDoorsClose = true;
+                    if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("todo cerrado"); }
+                    break;
+                }
+                if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("todo cerrado"); }
             }
             else
             {
                 doorsClosed = 0;
                 allDoorsClose = false;
+                if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("alguna abierta"); }
                 break;
             }
 
-            if(doorsClosed == 3)
-            {
-                allDoorsClose = true;
-            }
+            
         }
 
-        if(rotacionPuerta != new Vector3 (0, 90, 0))
+        if(rotacionPuertaCorrecta != new Vector3 (0, 90, 0))
         {
             correctDoorOpen = false;
         }
         else
         {
             correctDoorOpen = true;
+            if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("puerta correcta abierta"); }
         }
 
         //condiciones puzzle
@@ -84,12 +104,14 @@ public class BathroomPuzzle : MonoBehaviour
         if (collectComplete == true && allDoorsClose == true && correctDoorOpen == true && allObjectsSetted == true)
         {
             puzzleComplete = true;
+            Debug.Log("listo baño");
         }
 
 
         if(puzzleComplete == true)
         {
             reward.SetActive (true);
+            Debug.Log("llave");
         }
     }
 }
