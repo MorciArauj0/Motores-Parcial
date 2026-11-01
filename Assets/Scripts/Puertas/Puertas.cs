@@ -4,7 +4,7 @@ using UnityEngine.ProBuilder.Shapes;
 public class Puertas : MonoBehaviour
 {
     [Header("Variables")]
-    public float openAngle = 90f;
+    public float openAngle = -90f;
 
     [SerializeField] private GameObject pivot;
     private Quaternion openRotation;
