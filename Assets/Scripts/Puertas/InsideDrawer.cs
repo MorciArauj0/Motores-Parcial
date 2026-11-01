@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class InsideDrawer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Drawer drawer;
+
     void Start()
     {
-        
+        //drawer.GetComponent<Drawer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (drawer.Opened == false) 
+        {
+            Debug.Log("Agarra la linterna");
+        }
     }
-}
+
+} 
