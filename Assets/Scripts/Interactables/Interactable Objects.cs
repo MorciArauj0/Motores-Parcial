@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum InteractableItemID
 {
-    door, drawer, computer, painting, clock
+    door, drawer, computer, painting, clock, setObjectZone
 }
 
 public class InteractableObjects : MonoBehaviour, IInteractable
