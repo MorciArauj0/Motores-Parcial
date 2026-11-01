@@ -9,14 +9,11 @@ public class BathroomCollect : MonoBehaviour, IInteractable
 
     [SerializeField] Inventory inventory;
     [SerializeField] private ItemID itemMust;
-    //[SerializeField] private ItemID finalItem;
 
-    ////[SerializeField] private GameObject setObjectPrefab;
-    //[SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject settedObject;
 
     private bool resuelto = false;
-    //private bool allPieces = false;
+
 
     public void Interact()
     {
@@ -30,14 +27,6 @@ public class BathroomCollect : MonoBehaviour, IInteractable
             inventory.RemoveItem(itemMust);
             settedObject.SetActive(true);
 
-            //        if (dropObjectPrefab != null)
-            //        {
-            //            settedObject.SetActive(true);
-
-            //            if (bathroomCollect == null)
-            //            {
-            //                allPieces = true;
-            //            }
             Debug.Log("A veer si anda, item usado!!");
         }       
         else
@@ -45,16 +34,5 @@ public class BathroomCollect : MonoBehaviour, IInteractable
             Debug.Log("Necesitas este item:" + itemMust);
         }
     }
-
-    //    if(finalItem == ItemID.vase && allPieces)
-    //    {
-    //        //Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
-    //        //Quaternion rot = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
-    //        //Instantiate(dropObjectPrefab, pos, rot);
-
-    //        resuelto = true;
-
-    //    }
-    //}
 
 }
