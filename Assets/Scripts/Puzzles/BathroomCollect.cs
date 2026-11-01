@@ -11,8 +11,6 @@ public class BathroomCollect : MonoBehaviour, IInteractable
     [SerializeField] private ItemID itemMust;
     //[SerializeField] private ItemID finalItem;
 
-    [SerializeField] private GameObject missingObject;
-
     ////[SerializeField] private GameObject setObjectPrefab;
     //[SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject settedObject;
@@ -31,8 +29,6 @@ public class BathroomCollect : MonoBehaviour, IInteractable
         {
             inventory.RemoveItem(itemMust);
             settedObject.SetActive(true);
-
-            if (missingObject != null) missingObject.SetActive(true);
 
             //        if (dropObjectPrefab != null)
             //        {
