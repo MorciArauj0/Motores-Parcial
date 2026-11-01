@@ -12,7 +12,7 @@ public class Drawer : MonoBehaviour, IInteractable
     private bool isOpen = false;
     private bool isClose = true;
 
-    //public bool Opened -> isOpen; no recuerdo como get :c
+    public bool Opened => isOpen; 
 
     void Start()
     {
