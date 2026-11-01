@@ -269384,6 +269384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawer
   drawer: {fileID: 671785127}
+  lantern: {fileID: 0}
   anim: {fileID: 2106212524}
 --- !u!1 &2106336899
 GameObject:
