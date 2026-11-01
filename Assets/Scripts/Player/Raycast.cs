@@ -6,22 +6,9 @@ public class Raycast : MonoBehaviour
 {
     [Header("Variables")]
     public LayerMask layermask;
-    float radius = 1f;
+    float radius = 2.5f;
     public Inventory inventory;
 
-
-    void Update()
-    {
-        //todo lo que esta aca en update es visual, despues lo podemos borrar pero me parece mas util mantenerlo por ahora asi vemos las lineas
-        if(Physics.SphereCast(transform.position, radius, transform.TransformDirection(Vector3.forward), out RaycastHit hitinfo, 10f, layermask))
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.red);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.green);
-        }
-    }
 
     public void OnInteract(InputValue value)
     {
@@ -45,6 +32,12 @@ public class Raycast : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + transform.forward * 10f, radius);
     }
 }
  
