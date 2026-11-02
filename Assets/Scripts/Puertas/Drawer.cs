@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,11 +7,16 @@ public class Drawer : MonoBehaviour, IInteractable
     [Header("Variables")]
 
     [SerializeField] private GameObject drawer;
-    [SerializeField] private GameObject lantern;
     [SerializeField] private Animator anim;
+
+    //[SerializeField] private InsideDrawer inside;
+
+
     private InputAction Interaction;
     private bool isOpen = false;
     private bool isClose = true;
+    private bool closeIT = false;
+    private bool openIT = true;
 
     public bool Opened => isOpen; 
 
@@ -18,6 +24,9 @@ public class Drawer : MonoBehaviour, IInteractable
     {
         anim = GetComponent<Animator>();
         Interaction = InputSystem.actions.FindAction("Interact");
+        //inside = GetComponent<InsideDrawer>();
+
+        //inside.Collected += CloseDrawer;
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -30,7 +39,7 @@ public class Drawer : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (isOpen == false && isClose == true)
+        if (openIT == true)
         {
             anim.SetBool("Opening", true);
             anim.SetBool("Closing", false);
@@ -39,7 +48,7 @@ public class Drawer : MonoBehaviour, IInteractable
             Debug.Log("tendria que abrirse");
         }
 
-            if(lantern.activeSelf == false)
+        if (closeIT == true)
         {
             if (isOpen == true && isClose == false)
             {
@@ -51,9 +60,26 @@ public class Drawer : MonoBehaviour, IInteractable
                 Debug.Log("tendria que cerrarse");
             }
         }
-        
+
+
         Debug.Log("te odio new input system");
-        //}
+    }
+
+    //private void CloseDrawer(bool collected)
+    //{
+    //    lanternCollected = true;
+    //}
+
+    public void canCloseDrawer()
+    {
+        closeIT = true;
+        openIT = false;
+    }
+
+    public void canOpenDrawer()
+    {
+        closeIT = false;
+        openIT = true;
     }
 
 }
