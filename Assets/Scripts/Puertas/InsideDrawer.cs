@@ -1,19 +1,25 @@
+using System;
 using UnityEngine;
 
 public class InsideDrawer : MonoBehaviour
 {
     [SerializeField] private Drawer drawer;
+    [SerializeField] private CollectObjects lantern;
+
+    public bool collected = false;
 
     void Start()
     {
         //drawer.GetComponent<Drawer>();
+        lantern = GetComponent<CollectObjects>();
     }
 
     void Update()
     {
-        if (drawer.Opened == false) 
+        if (drawer.Opened == true) 
         {
-            Debug.Log("Agarra la linterna");
+            lantern.enabled = true;
+            collected = true;
         }
     }
 

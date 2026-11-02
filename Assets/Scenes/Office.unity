@@ -76293,6 +76293,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: efa41b2a091f23b47adee63cfeba4ee2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8641790461128013279, guid: efa41b2a091f23b47adee63cfeba4ee2, type: 3}
       propertyPath: m_Name
       value: PuertaArchivero
@@ -242051,7 +242055,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877827441}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5364dbfb1c347a488ae4e72b79b450a, type: 3}
   m_Name: 
@@ -242076,8 +242080,23 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00796956, y: 0.00796956, z: 0.0164849}
-  m_Center: {x: -2.3283064e-10, y: -0.0000000030267984, z: 0.007769995}
+  m_Size: {x: 0.020945925, y: 0.02602312, z: 0.016484898}
+  m_Center: {x: 0.0013926692, y: -0.009026873, z: 0.007769996}
+--- !u!114 &1877827447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877827441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5410c6745b0cfb44d8cc98dac19e0b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InsideDrawer
+  drawer: {fileID: 2106212525}
+  lantern: {fileID: 1877827443}
+  collected: 0
 --- !u!43 &1877918852
 Mesh:
   m_ObjectHideFlags: 0
@@ -249871,19 +249890,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00077
+      value: -0.0007700072
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00796
+      value: -0.007960003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00388
+      value: 0.0038800004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7470014
+      value: -0.74700147
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -249891,11 +249910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000372529
+      value: 0.00000007264316
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000119209275
+      value: 0.0000000949949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -249921,6 +249940,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -249931,6 +249954,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1877827443}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1877827447}
   m_SourcePrefab: {fileID: 100100000, guid: 0ced6e15fad016241955cc3aa9b919c2, type: 3}
 --- !u!1001 &1956772557
 PrefabInstance:
@@ -269764,7 +269790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawer
   drawer: {fileID: 671785127}
-  lantern: {fileID: 0}
   anim: {fileID: 2106212524}
 --- !u!1 &2106336899
 GameObject:
