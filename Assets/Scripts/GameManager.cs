@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //bloquear mouse
@@ -50,6 +52,12 @@ public class GameManager : MonoBehaviour
             ReiniciarLoop();
         }
         //
+
+        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public void ReiniciarLoop()
