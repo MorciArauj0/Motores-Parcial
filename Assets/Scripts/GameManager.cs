@@ -25,15 +25,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //congelar mouse
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    //bloquear mouse
-    //void Start()
-    //{
-    //    Cursor.lockState = CursorLockMode.Locked;
-    //    Cursor.visible = false;
-    //}
 
     void Update()
     {
@@ -53,11 +48,18 @@ public class GameManager : MonoBehaviour
         }
         //
 
+        //congelar mouse
         if(Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
     }
 
     public void ReiniciarLoop()
