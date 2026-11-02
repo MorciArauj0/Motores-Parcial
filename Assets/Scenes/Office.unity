@@ -20467,12 +20467,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184543210}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008473472, y: 0, z: 0, w: 0.9999641}
-  m_LocalPosition: {x: 27, y: 6.25, z: -8.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.008473472, y: -0, z: -0, w: 0.9999641}
+  m_LocalPosition: {x: 0.5, y: 2.125, z: -1.4000001}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 1652729496}
+  m_Father: {fileID: 411201714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &184543214
 MonoBehaviour:
@@ -37180,7 +37181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &280027178
 Transform:
   m_ObjectHideFlags: 0
@@ -116371,7 +116372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &927285782
 Transform:
   m_ObjectHideFlags: 0
@@ -219783,6 +219784,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6115ad9b238f0f84daedea4b92a60c8e, type: 3}
+--- !u!1 &1652729495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652729496}
+  - component: {fileID: 1652729497}
+  m_Layer: 0
+  m_Name: Raycast (1)
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652729496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652729495}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.008473472, y: -0, z: -0, w: 0.9999641}
+  m_LocalPosition: {x: -1.1000004, y: -1.3640401, z: -3.1773405}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 184543213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1652729497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652729495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09b5dbaf534178448527f4a245d5b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Raycast
+  layermask:
+    serializedVersion: 2
+    m_Bits: 212928
+  inventory: {fileID: 602015428}
 --- !u!43 &1653536691
 Mesh:
   m_ObjectHideFlags: 0
@@ -249265,6 +249314,9 @@ PrefabInstance:
       addedObject: {fileID: 1121292941}
     - targetCorrespondingSourceObject: {fileID: 8364363761314378331, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 184543213}
+    - targetCorrespondingSourceObject: {fileID: 8364363761314378331, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 927285782}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8690708738687310815, guid: c1698da31d9d844489567d9fcf6c6082, type: 3}
@@ -278716,7 +278768,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 878455249}
-  - {fileID: 184543213}
   - {fileID: 600168711}
   - {fileID: 1070606748}
   - {fileID: 556114920}
