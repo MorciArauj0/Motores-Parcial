@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SetBooks : MonoBehaviour, IInteractable
+public class SetBooks : MonoBehaviour
 {
     [Header("Colecta")]
     [SerializeField] private List<BooksID> books = new List<BooksID>();
@@ -11,8 +11,6 @@ public class SetBooks : MonoBehaviour, IInteractable
     [Header("Ordenar")]
     [SerializeField] private GameObject selectedZone;
     [SerializeField] private GameObject puzzleCamera; 
-
-    //ocultar al jugador
 
     [SerializeField] private Transform first;
     [SerializeField] private Transform second;
@@ -32,47 +30,32 @@ public class SetBooks : MonoBehaviour, IInteractable
         Vector3 fifthBook = fifth.transform.position;
     }
 
-    public void Interact()
+    private void OnCollisionStay(Collision collision)
     {
-        PuzzleMode();
-    }
-
-    void Update()
-    {
-        if (puzzleCamera.activeSelf == true)
+        if(collision.gameObject.CompareTag("Player"))
         {
-            if (Keyboard.current.digit1Key.wasPressedThisFrame)
+            if (Keyboard.current.eKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
             {
-                selectedZone.transform.position = first.position;
+                puzzleCamera.SetActive(true);
+                selectedZone.SetActive(true);
             }
 
-            else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+            if (puzzleCamera.activeSelf == true)
             {
-                selectedZone.transform.position = second.position;
-            }
-
-            else if (Keyboard.current.digit3Key.wasPressedThisFrame)
-            {
-                selectedZone.transform.position = third.position;
-            }
-
-            else if (Keyboard.current.digit4Key.wasPressedThisFrame)
-            {
-                selectedZone.transform.position = fourth.position;
-            }
-
-            else if (Keyboard.current.digit5Key.wasPressedThisFrame)
-            {
-                selectedZone.transform.position = fifth.position;
+                if (Keyboard.current.digit1Key.wasPressedThisFrame)
+                {
+                    selectedZone.transform.position = first.position;
+                }
+                else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+                {
+                    selectedZone.transform.position = first.position;
+                }
             }
         }
+        
     }
-
-    void PuzzleMode()
+    void Update()
     {
-        puzzleCamera.SetActive(true);
-        selectedZone.SetActive(true);
-
-        Debug.Log("libros");
+        
     }
 }
