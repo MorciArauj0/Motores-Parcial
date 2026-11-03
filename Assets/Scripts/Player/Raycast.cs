@@ -31,6 +31,7 @@ public class Raycast : MonoBehaviour
                 collectable.Collect();
                 return;
             }
+
         }
     }
 

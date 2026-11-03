@@ -2,7 +2,8 @@ using UnityEngine;
 
 public enum ItemID
 {
-    paper, paintObject, vase, broom, lintern, archiveKey, bossKey, breakKey, clockKey, conferenceKey
+    paper, paintObject, vase, broom, lintern, archiveKey, bossKey, breakKey, clockKey, conferenceKey, 
+    archiversBook, meetingsBook, bathroomBook, breakroomBook, computersBook
 }
 
 public class CollectObjects : MonoBehaviour, ICollectable
