@@ -15,6 +15,7 @@ public class CollectObjects : MonoBehaviour, ICollectable
     {
         gameObject.SetActive(false);
         Debug.Log("recolectadoo:" + id);
+        InteraccionUI.Instance.Mostrar("agarraste " + id);
     }
 
 }
