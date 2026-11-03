@@ -20,7 +20,7 @@
                     "type": "Value",
                     "id": "59bfd3a2-7c66-4b7d-b323-1e7206874757",
                     "expectedControlType": "Delta",
-                    "processors": "",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=2.5,y=2.5)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
