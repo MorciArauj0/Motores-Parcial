@@ -44,6 +44,7 @@ public class BooksPuzzleManager : MonoBehaviour, IInteractable
 
     void Start()
     {
+        zones = new List<bool>();
         zones.Add(firstZone);
         zones.Add(secondZone);
         zones.Add(thirdZone);
