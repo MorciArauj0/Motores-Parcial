@@ -30,7 +30,6 @@ public class Character : MonoBehaviour
 
     [Header("Animaciones")]
     [SerializeField] private Animator animator;
-    //public float vel = 0f; 
 
 
     [Header("Gravedad")]
@@ -64,7 +63,6 @@ public class Character : MonoBehaviour
         animator = GetComponent<Animator>();
 
         speed = normalSpeed;
-        //IsMoving = false;
     }
 
     void Update()
