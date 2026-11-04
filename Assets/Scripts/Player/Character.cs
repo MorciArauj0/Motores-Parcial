@@ -1,9 +1,10 @@
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Unity.Cinemachine;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
-using Unity.Cinemachine;
-using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerInput))]
@@ -29,8 +30,7 @@ public class Character : MonoBehaviour
 
     [Header("Animaciones")]
     [SerializeField] private Animator animator;
-    public float vel = 0f;
-    public bool IsMoving;
+    //public float vel = 0f; 
 
 
     [Header("Gravedad")]
@@ -61,9 +61,10 @@ public class Character : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         speed = normalSpeed;
-        IsMoving = false;
+        //IsMoving = false;
     }
 
     void Update()
@@ -91,13 +92,12 @@ public class Character : MonoBehaviour
         //camara
         look = playerInput.actions["Camera Direction"].ReadValue<Vector2>();
 
-        //animator
-        animator.SetBool("IsMoving", IsMoving);
 
         //funciones
         HandleMovement();
         HandleLook();
         ApplyGravity();
+        HandleAnimations();
     }
 
     private void HandleMovement()
@@ -128,5 +128,34 @@ public class Character : MonoBehaviour
     {
         Vector3 gravityVector = new Vector3(0f, verticalVelocity, 0f);
         characterController.Move(gravityVector * Time.deltaTime);
+    }
+
+    private void HandleAnimations()
+    {
+        bool isWalking = animator.GetBool("IsWalking");
+        bool isRunning = animator.GetBool("IsRunning");
+
+        if (inputVector.magnitude > 0f)
+        {
+            if (speed == sprintSpeed && !isRunning)
+            {
+                animator.SetBool("IsRunning", true);
+                animator.SetBool("IsWalking", false);
+                
+            }
+            else if (speed == normalSpeed && !isWalking)
+            {
+                animator.SetBool("IsWalking", true);
+                animator.SetBool("IsRunning", false);
+            }
+        }
+        else
+        {
+            if (isWalking || isRunning)
+            {
+                animator.SetBool("IsWalking", false);
+                animator.SetBool("IsRunning", false);
+            }
+        }
     }
 }
