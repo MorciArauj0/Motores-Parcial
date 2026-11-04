@@ -14,7 +14,7 @@ public class InteractableObjects : MonoBehaviour, IInteractable
     [SerializeField] Inventory inventory;
     [SerializeField] private ItemID itemMust;
 
-
+    [SerializeField] private GameObject puzzleComplete;
     [SerializeField] private GameObject missingObject;
     [SerializeField] private GameObject dropObjectPrefab;
     [SerializeField] private Transform spawnPoint;
@@ -43,6 +43,8 @@ public class InteractableObjects : MonoBehaviour, IInteractable
 
             resuelto = true;
             Debug.Log("A veer si anda, item usado!!");
+
+            if (resuelto) puzzleComplete.SetActive(true);
         }
         else
         {
