@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     Character character;
     [SerializeField] private List<ItemID> InventoryList = new List<ItemID>();
 
+    [SerializeField] private InventoryUI inventoryUI;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Inventory : MonoBehaviour
     {
         InventoryList.Add(id);
         Debug.Log("al inventario" + id);
+        ActualizarUI();
     }
 
     public bool HasItem(ItemID id)
@@ -28,6 +30,13 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(ItemID id)
     {
         InventoryList.Remove(id);
+        ActualizarUI();
     }
-    
+    void ActualizarUI()
+{
+    if (inventoryUI != null)
+    {
+        inventoryUI.ActualizarInventario(InventoryList);
+    }
+}
 }
