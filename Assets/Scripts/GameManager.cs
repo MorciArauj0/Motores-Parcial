@@ -57,9 +57,13 @@ public class GameManager : MonoBehaviour
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            bool dialogoAbierto = DialogoUI.Instance != null && DialogoUI.Instance.Abierto;
+            if (!dialogoAbierto)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
-        
+
     }
 
     public void ReiniciarLoop()
