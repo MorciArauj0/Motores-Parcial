@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Unity.Cinemachine;
+using System.Runtime.CompilerServices;
+using UnityEditor.Experimental.GraphView;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerInput))]
@@ -24,15 +26,17 @@ public class Character : MonoBehaviour
     [Header("Cámara")]
     [SerializeField] private Transform cameraTransform;
 
+
     [Header("Animaciones")]
     [SerializeField] private Animator animator;
     public float vel = 0f;
     public bool IsMoving;
 
-    [Header("Objeto")]
-    //[SerializeField] private GameObject objectPrefab;
 
-    [SerializeField] private float gravity = -9.8f;
+    [Header("Gravedad")]
+    private float gravity = -9.81f;
+    [SerializeField] private float gravityMultiplier = 3f;
+    private float verticalVelocity;
 
 
     //============================================
@@ -64,8 +68,19 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+        //gravedad
+        bool isGrounded = characterController.isGrounded;
+        if (isGrounded && verticalVelocity < 0f)
+        {
+            verticalVelocity = -2f;
+        }
+
+        verticalVelocity += gravity * gravityMultiplier * Time.deltaTime;
+
+        //movimiento
         inputVector = playerInput.actions["Basic Move"].ReadValue<Vector2>();
 
+        //velocidad
         bool running = playerInput.actions["Run"].IsPressed();
 
         if (running)
@@ -73,14 +88,16 @@ public class Character : MonoBehaviour
         else
             speed = normalSpeed;
 
-
-
+        //camara
         look = playerInput.actions["Camera Direction"].ReadValue<Vector2>();
 
+        //animator
         animator.SetBool("IsMoving", IsMoving);
 
+        //funciones
         HandleMovement();
         HandleLook();
+        ApplyGravity();
     }
 
     private void HandleMovement()
@@ -95,15 +112,6 @@ public class Character : MonoBehaviour
 
         Vector3 move = (forward * inputVector.y) + (right * inputVector.x);
         characterController.Move(move * speed * Time.deltaTime);
-
-        //if (vel == 0.5f)
-        //{
-        //    IsMoving = true;
-        //}
-        //else
-        //{
-        //    IsMoving = false;
-        //}
     }
 
     private void HandleLook()
@@ -116,4 +124,9 @@ public class Character : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
     }
 
+    private void ApplyGravity()
+    {
+        Vector3 gravityVector = new Vector3(0f, verticalVelocity, 0f);
+        characterController.Move(gravityVector * Time.deltaTime);
+    }
 }
