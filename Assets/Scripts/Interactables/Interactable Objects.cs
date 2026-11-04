@@ -48,6 +48,7 @@ public class InteractableObjects : MonoBehaviour, IInteractable
         }
         else
         {
+            InteraccionUI.Instance.Mostrar("parece que acá falta algo..");
             Debug.Log("Necesitas este item:" + itemMust);
         }
     }

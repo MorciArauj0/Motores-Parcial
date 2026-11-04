@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e541296977b74428e1c8ee055960c5, type: 3}
+  m_Name: "Ba\xF1os"
+  m_EditorClassIdentifier: Assembly-CSharp::PistasPuzzle
+  idPuzzle: banios
+  nombreHabitacion: "Ba\xF1os"
+  desbloqueadaAlInicio: 1
+  pistas:
+  - Al jefe le encanta tener todo bien ordenado y prolijo, fijate si no hay nada
+    fuera de lugar.
+  - "Ahora que reviso de nuevo, le encanta la simetr\xEDa... capaz te sirve de algo."
+  - "\xBFProbaste ir moviendo cosas hasta que queden parecidos?"

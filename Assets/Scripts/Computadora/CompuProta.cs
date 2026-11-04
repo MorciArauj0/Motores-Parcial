@@ -1,46 +1,32 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class CompuProta : MonoBehaviour
+public class CompuProta : MonoBehaviour, IInteractable
 {
-    private static CompuProta Instance;
-    private Character jugador;
-    private bool unMensaje = false; // para que el debug me devuelva un dialogo a la vez xd
+    public static CompuProta Instance;
 
-    //// para testear si cuando se reinicia el loop se mantiene la computadora sin reiniciar
-    private Queue<string> mensajes = new Queue<string>();
+    [Header("Presentación")]
+    [TextArea(2, 4)]
+    [SerializeField] private string[] lineasPresentacion;
 
-    private void CargarMensajes()
-    {
-        mensajes.Enqueue("dialogo 1 de 5");
-        mensajes.Enqueue("dialogo 2 de 5");
-        mensajes.Enqueue("dialogo 3 de 5");
-        mensajes.Enqueue("dialogo 4 de 5");
-        mensajes.Enqueue("dialogo 5 de 5");
-    }
+    [Header("Habitaciones")]
+    [SerializeField] private PistasPuzzle[] todosLosPuzzles;
 
-    private void MostrarSiguienteMensaje()
-    {
-        if (mensajes.Count > 0)
-        {
-            string mensaje = mensajes.Dequeue();
-            Debug.Log(mensaje);
-        }
-        else
-        {
-            Debug.Log("se terminaron los dialogos");
-        }
-    }
+    private bool sePresento = false;
+    private HashSet<string> desbloqueados = new HashSet<string>();
+    private Dictionary<string, int> pistasDadas = new Dictionary<string, int>();
 
-    ////
+    // lista para saber q puzzle corresponde a q boton
+    private List<PistasPuzzle> disponibles = new List<PistasPuzzle>();
 
     void Awake()
     {
         if (Instance == null)
         {
+            transform.SetParent(null, true);
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            CargarMensajes(); // para testear
+            DesbloqueosIniciales();
         }
         else
         {
@@ -48,26 +34,103 @@ public class CompuProta : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void DesbloqueosIniciales()
     {
-        Character character = other.GetComponent<Character>();
-        if (character != null) jugador = character;
-        unMensaje = false;
+        foreach (var p in todosLosPuzzles)
+            if (p.desbloqueadaAlInicio) desbloqueados.Add(p.idPuzzle);
     }
 
-    private void OnTriggerExit(Collider other)
+    public void DesbloquearHabitacion(string idPuzzle)
     {
-        Character character = other.GetComponent<Character>();
-        if (character != null) jugador = null;
-    }
+        if (!desbloqueados.Add(idPuzzle)) return; // ya estaba desbloqueada
 
-    private void Update()
-    {
-        if (jugador != null && jugador.IsInteracting && !unMensaje)
+        PistasPuzzle puzzle = System.Array.Find(todosLosPuzzles, p => p.idPuzzle == idPuzzle);
+        if (puzzle == null)
         {
-            MostrarSiguienteMensaje(); // para testear
-            unMensaje = true;
+            Debug.Log("no existe un puzzle con id " + idPuzzle);
+            return;
         }
+
+
     }
 
+    public void Interact()
+    {
+        if (!sePresento) MostrarPresentacion(0);
+        else MostrarMenu();
+    }
+
+    // DIALOGO
+
+    private void MostrarPresentacion(int i)
+    {
+        if (lineasPresentacion == null || i >= lineasPresentacion.Length)
+        {
+            sePresento = true;
+            MostrarMenu();
+            return;
+        }
+
+        DialogoUI.Instance.Mostrar(
+     lineasPresentacion[i],
+     new[] { "Continuar" },
+     _ =>
+     {
+         MostrarPresentacion(i + 1);
+     });
+    }
+
+    private void MostrarMenu()
+    {
+        disponibles.Clear();
+        foreach (var p in todosLosPuzzles)
+            if (desbloqueados.Contains(p.idPuzzle)) disponibles.Add(p);
+
+        if (disponibles.Count == 0)
+        {
+            DialogoUI.Instance.Mostrar(
+                "[No hay habitaciones desbloqueadas]",
+                new[] { "Listo" },
+                _ => DialogoUI.Instance.Cerrar());
+            return;
+        }
+
+        string[] etiquetas = new string[disponibles.Count + 1];
+        for (int i = 0; i < disponibles.Count; i++)
+            etiquetas[i] = disponibles[i].nombreHabitacion;
+        etiquetas[etiquetas.Length - 1] = "Por ahora no, gracias";
+
+        DialogoUI.Instance.Mostrar("¿Necesitás ayuda con algo en particular?", etiquetas, ElegirHabitacion);
+    }
+
+    private void ElegirHabitacion(int i)
+    {
+        if (i >= disponibles.Count)
+        {
+            DialogoUI.Instance.Cerrar();
+            return;
+        }
+
+        string pista = SiguientePista(disponibles[i]);
+
+        DialogoUI.Instance.Mostrar(
+            pista,
+            new[] { "Preguntar más", "Listo" },
+            j =>
+            {
+                if (j == 0) MostrarMenu();
+                else DialogoUI.Instance.Cerrar();
+            });
+    }
+
+    private string SiguientePista(PistasPuzzle puzzle)
+    {
+        if (puzzle.pistas == null || puzzle.pistas.Length == 0)
+            return "No tengo información sobre esta sala...";
+
+        pistasDadas.TryGetValue(puzzle.idPuzzle, out int indice);
+        string pista = puzzle.pistas[Mathf.Min(indice, puzzle.pistas.Length - 1)];
+        pistasDadas[puzzle.idPuzzle] = indice + 1;
+        return pista;
+    }
 }
