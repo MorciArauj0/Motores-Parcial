@@ -1,6 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class DesbloqueoPorItem
+{
+    public ItemID item;
+    public string idHabitacion;
+}
+
 public class CompuProta : MonoBehaviour, IInteractable
 {
     public static CompuProta Instance;
@@ -132,5 +139,14 @@ public class CompuProta : MonoBehaviour, IInteractable
         string pista = puzzle.pistas[Mathf.Min(indice, puzzle.pistas.Length - 1)];
         pistasDadas[puzzle.idPuzzle] = indice + 1;
         return pista;
+    }
+
+    [Header("Objeto que desbloquea habitación")]
+    [SerializeField] private DesbloqueoPorItem[] desbloqueosPorItem;
+
+    public void AlRecolectar(ItemID item)
+    {
+        foreach (var d in desbloqueosPorItem)
+            if (d.item == item) DesbloquearHabitacion(d.idHabitacion);
     }
 }
