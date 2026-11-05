@@ -1,54 +1,55 @@
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class bookZone : MonoBehaviour
 {
     [Header ("Datos")]
-    //public ItemID neededBook;
-    public CollectObjects correctBook;
+    public BookObject bookToSet;
 
 
-    //[Header("Posicion")]
-    //public Transform first;
-    //public Transform second;
-    //public Transform third;
-    //public Transform fourth;
-    //public Transform fifth;
 
-    [Header("Variables privadas")]
-    private CollectObjects settedBook;
-    private Transform settedPosition;
-    public bool Setted = false;
-
-   
-    //[SerializeField] private List<GameObject> booksPlace = new List<GameObject>();
-
-    void Update()
+    public bool Occupied()
     {
-        if(settedBook != null)
+        if(bookToSet == null)
         {
-            Setted = true;
+            return false;
         }
+        return true;
     }
 
-    public bool TrySetBook(CollectObjects book)
+    public void SetBook (BookObject book)
     {
-        settedBook = book;
+        Debug.Log("seteando");
 
-        if(Setted == true || book == null)
+        if(Occupied() || book == null)
         {
-            return false;
+            return;
         }
 
-        if (book != correctBook)
+        bookToSet = book;
+
+        book.gameObject.SetActive (true);
+
+        book.transform.SetParent(transform);
+
+        book.transform.localPosition = Vector3.zero;
+        book.transform.localRotation = Quaternion.identity;
+    }
+
+    public BookObject RemoveBook()
+    {
+        Debug.Log("removiendo");
+        BookObject book = bookToSet;
+
+        if (book != null)
         {
-            return false;
+            //book.transform.SetParent(null);
+            book.gameObject.SetActive (false);
+            bookToSet.transform.SetParent(null);
+            bookToSet = null;
+            Debug.Log("removido");
         }
 
-        Debug.Log("libro " + book.ID + " puesto.");
-
-        return true;
+        return book;
     }
     
 }

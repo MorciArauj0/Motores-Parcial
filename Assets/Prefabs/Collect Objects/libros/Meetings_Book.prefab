@@ -81,7 +81,7 @@ PrefabInstance:
       addedObject: {fileID: 2277887602108588991}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aad3d211cb27a3d4288fc3101c23a15a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 481915575038526492}
+      addedObject: {fileID: 7397290241709445234}
   m_SourcePrefab: {fileID: 100100000, guid: aad3d211cb27a3d4288fc3101c23a15a, type: 3}
 --- !u!1 &8337529376078914817 stripped
 GameObject:
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.95381266, y: 0.2759113, z: 1.2493625}
   m_Center: {x: 0.0000016540289, y: -0.0000011920929, z: 0}
---- !u!114 &481915575038526492
+--- !u!114 &7397290241709445234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8337529376078914817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5364dbfb1c347a488ae4e72b79b450a, type: 3}
+  m_Script: {fileID: 11500000, guid: bf0d7a73cf1110f4dbc6a65612158984, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
+  m_EditorClassIdentifier: Assembly-CSharp::BookObject
+  myself: {fileID: 8337529376078914817}
+  whichBook: 3
   id: 11
