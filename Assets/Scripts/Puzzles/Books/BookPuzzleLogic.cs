@@ -4,12 +4,16 @@ using UnityEngine.InputSystem;
 
 public class BookPuzzleLogic : MonoBehaviour
 {
+
     [SerializeField] private Inventory inventory;
     [SerializeField] private BooksPuzzleManager puzzleManager;
 
     [SerializeField] private bookZone[] zones;
     [SerializeField] private BookObject[] books;
     [SerializeField] private List<BookObject> booksCollected = new List<BookObject>();
+
+
+
     //public bookZone[] slots;
     private bookZone selectedZone;
     private BookObject selectedBook;
@@ -38,6 +42,11 @@ public class BookPuzzleLogic : MonoBehaviour
         }
     }
 
+    public void AddBook(BookObject book)
+    {
+        booksCollected.Add(book);
+    }
+    
     void SelectZone()
     {
         for (int i = 0; i < zones.Length; i++)
@@ -67,31 +76,45 @@ public class BookPuzzleLogic : MonoBehaviour
                 return;
             }
 
-            ChangeBooksCollected();
-            if(inventory.objetosEnInventario == 0)
+            //ActualizarBooksCollected();
+            
+            if (inventory.objetosEnInventario == 0)
             {
                 Debug.Log("no agarraste libros");
                 return;
             }
-            Debug.Log("me superpongo, hola");
         }
 
         currentState = SelectionState.SelectingBook;
         return;
     }
 
-    void ChangeBooksCollected()
+    void ActualizarBooksCollected()
     {
-        booksCollected.Clear();
+        //booksCollected.Clear();
 
-        foreach (BookObject book in  books)
+        foreach (BookObject book in books)
         {
             if (book != null && inventory.HasItem(book.ID))
             {
                 booksCollected.Add(book);
             }
         }
+
+        for(int i = 0; i < inventory.objetosEnInventario; i++)
+        {
+            for (int j = 0; j < booksCollected.Count; j++)
+            {
+                if (inventory.inventarioPublico[i] == booksCollected[j].ID)
+                {
+
+                }
+
+            }
+        }
     }
+
+
     void SelectBook()
     {
         for (int i = 0; i < booksCollected.Count; i++)
@@ -99,6 +122,7 @@ public class BookPuzzleLogic : MonoBehaviour
             if (Keyboard.current[numberKeys[i]].wasPressedThisFrame)
             {
                 selectedBook = booksCollected[i];
+                //selectedBook.audio.Play();
                 Debug.Log("seleccionaste libro " + i);
             }
         }
@@ -126,19 +150,21 @@ public class BookPuzzleLogic : MonoBehaviour
 
     public bool SetInventoryBook(int index)
     {
-        ChangeBooksCollected();
-
-        if(selectedZone == null)
-        {
-            return false;
-        }
-
-        if(index < 0 || index >= booksCollected.Count)
-        {
-            return false;
-        }
-
         selectedBook = booksCollected[index];
+        Debug.Log(selectedBook.ID);
+        booksCollected.Remove(selectedBook);
+        Debug.Log(selectedBook.ID);
+        //ActualizarBooksCollected();
+
+        if (selectedZone == null)
+        {
+            return false;
+        }
+
+        //if(index < 0 || index >= booksCollected.Count)
+        //{
+        //    return false;
+        //}
 
         if(!inventory.HasItem(selectedBook.ID))
         {
@@ -161,23 +187,24 @@ public class BookPuzzleLogic : MonoBehaviour
     public bool TrySelectZone(int index)
     {
 
-        if(index < 0 || index >= zones.Length)
-        {
-            Debug.Log("basta por favor");
-            return false;
-        }
+        //if(index < 0 || index >= zones.Length)
+        //{
+        //    Debug.Log("basta por favor");
+        //    return false;
+        //}
 
         if (zones[index].Occupied())
         {
-            inventory.AddItem(zones[index].RemoveBook().ID);
-
+            BookObject book = zones[index].RemoveBook();
+            inventory.AddItem(book.ID);
+            booksCollected.Add(book);
             Debug.Log("ocupadoo");
             return false;  
         }
 
-        ChangeBooksCollected();
+        //ActualizarBooksCollected();
 
-        if(booksCollected.Count == 0)
+        if (booksCollected.Count == 0)
         {
             Debug.Log("agarra libros dale");
             return false;
@@ -189,15 +216,16 @@ public class BookPuzzleLogic : MonoBehaviour
     }
 
 
-    public int booksCollectedCount()
-    {
-        ChangeBooksCollected();
-        return booksCollected.Count;
-    }
+    //public int booksCollectedCount()
+    //{
+    //    ActualizarBooksCollected();
+    //    return booksCollected.Count;
+    //}
 
     public void CancelSelection()
     {
         selectedZone = null;
     }
+
 
 }

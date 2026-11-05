@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class BookObject : MonoBehaviour, ICollectable
 {
+    [SerializeField] private BookPuzzleLogic bookPuzzleLogic;
+    [SerializeField] private BookObject myself;
     private bool isCollected = false;
     [SerializeField] private int whichBook;
     [SerializeField] private ItemID id;
+    public AudioSource audio;
     public ItemID ID => id;
-
     public int bookID => whichBook;
 
     public void Collect()
@@ -16,8 +18,15 @@ public class BookObject : MonoBehaviour, ICollectable
         {
             return;
         }
+        
+        AudioSource myAudio = gameObject.GetComponent<AudioSource>();
+        myAudio.enabled = false;
+        audio.Stop();
         isCollected = true;
         gameObject.SetActive(false);
+        bookPuzzleLogic.AddBook(myself);
     }
+
+
 
 }
