@@ -29,9 +29,9 @@ public class EnemyIA : MonoBehaviour
 
 
     [Header("Rango de detección")]
-    bool walkPointSet;
     private float sightRange = 20f;
     private float sightRangeLose = 25f;
+    private float reinicioRange = 2.6f;
 
 
     public LayerMask whatIsGround, whatIsPlayer;
@@ -43,6 +43,17 @@ public class EnemyIA : MonoBehaviour
 
     private void Awake()
     {
+        GameObject contenedor = GameObject.Find("PatrolPoints");
+
+        if (contenedor != null)
+        {
+            patrolPoints = new Transform[contenedor.transform.childCount];
+            for (int i = 0; i < patrolPoints.Length; i++)
+            {
+                patrolPoints[i] = contenedor.transform.GetChild(i);
+            }
+        }
+
         playerTransform = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         rend = GetComponent<Renderer>();
@@ -62,7 +73,6 @@ public class EnemyIA : MonoBehaviour
         {
             currentState = State.Patrolling;
             agent.ResetPath();
-            walkPointSet = false;
         }
 
         if (currentState == State.Patrolling)
@@ -100,6 +110,16 @@ public class EnemyIA : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(playerTransform.position);
+
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
+        if (distanceToPlayer <= reinicioRange)
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ReiniciarLoop();
+            }
+        }
     }
 
     private Vector3 RandomNavMeshPoint()
