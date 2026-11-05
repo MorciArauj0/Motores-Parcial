@@ -324360,6 +324360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteraccionUI
   texto: {fileID: 704528161}
   duracion: 1.5
+  duracionFade: 0.3
 --- !u!1 &1691213006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8236812382555051848, guid: 5221923450598d54f8cf59ebd1d35d23, type: 3}
@@ -382698,6 +382699,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a02e109001f23c0458b7ed0d832f8ad8, type: 2}
   - {fileID: 11400000, guid: 2c86de37c050ff34983c09d05e9195f1, type: 2}
   - {fileID: 11400000, guid: 845815863339be846aeffb7611eaab22, type: 2}
+  desbloqueosPorItem:
+  - item: 5
+    idHabitacion: archivos
+  - item: 6
+    idHabitacion: oficinajefe
+  - item: 7
+    idHabitacion: descanso
+  - item: 9
+    idHabitacion: conferencias
 --- !u!4 &698306170845005076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2028978371101577376, guid: 5221923450598d54f8cf59ebd1d35d23, type: 3}
@@ -386294,6 +386304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CompuProta
   lineasPresentacion: []
   todosLosPuzzles: []
+  desbloqueosPorItem: []
 --- !u!33 &5764770232644868890
 MeshFilter:
   m_ObjectHideFlags: 10
