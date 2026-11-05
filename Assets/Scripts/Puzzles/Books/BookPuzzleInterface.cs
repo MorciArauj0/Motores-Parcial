@@ -9,6 +9,7 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
     public BookPuzzleLogic state;
     [SerializeField] private GameObject puzzleCamera;
     [SerializeField] private GameObject player;
+    [SerializeField] private Inventory inventory;
     [SerializeField] private GameObject raycast;
 
     [Header("Selectores")]
@@ -18,6 +19,13 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
     [Header("Posiciones")]
     [SerializeField] private Transform[] zonePosition;
     [SerializeField] private Transform[] inventoryPosition;
+
+    [Header("Audios")]
+    [SerializeField] private AudioSource archiverSound;
+    [SerializeField] private AudioSource mirrorSound;
+    [SerializeField] private AudioSource computerSound;
+    [SerializeField] private AudioSource radioSound;
+    [SerializeField] private AudioSource paintSound;
 
 
     [Header("Privados")]
@@ -46,7 +54,8 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
          if (currentState == SelectionState.SelectingZone)
          {
             SelectingZone();
-         }
+            Silence();
+        }
          else if (currentState == SelectionState.SelectingSlot)
          {
             SelectingSlot();
@@ -65,6 +74,7 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
             {
                 selectedZoneIndex = i;
 
+                
                 selectedZone.transform.position = zonePosition[i].position;
                 Debug.Log("posicion de zona " + i);
             }
@@ -96,13 +106,60 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
     void SelectingSlot()
     {
         selectedSlot.SetActive(true);
-
         for (int i = 0; i < inventoryPosition.Length; i++)
         {
             Key key = (Key)((int)Key.Digit1 + i);
             if (Keyboard.current[key].wasPressedThisFrame)
             {
                 selectedSlotIndex = i;
+
+                ItemID slotId = inventory.GetItemID(i);
+                Debug.Log("escuchando " + slotId);
+                if (slotId == 0)
+                {
+                    Debug.Log("Fuera de rango");
+                    Silence();
+                }
+                else if (slotId == ItemID.archiversBook)
+                {
+                    archiverSound.Play();
+                    computerSound.Stop();
+                    mirrorSound.Stop();
+                    radioSound.Stop();
+                    paintSound.Stop();
+                }
+                else if (slotId == ItemID.computersBook)
+                {
+                    archiverSound.Stop();
+                    computerSound.Play();
+                    mirrorSound.Stop();
+                    radioSound.Stop();
+                    paintSound.Stop();
+                }
+                else if (slotId == ItemID.bathroomBook)
+                {
+                    archiverSound.Stop();
+                    computerSound.Stop();
+                    mirrorSound.Play();
+                    radioSound.Stop();
+                    paintSound.Stop();
+                }
+                else if (slotId == ItemID.meetingsBook)
+                {
+                    archiverSound.Stop();
+                    computerSound.Stop();
+                    mirrorSound.Stop();
+                    radioSound.Play();
+                    paintSound.Stop();
+                }
+                else if (slotId == ItemID.breakroomBook)
+                {
+                    archiverSound.Stop();
+                    computerSound.Stop();
+                    mirrorSound.Stop();
+                    radioSound.Stop();
+                    paintSound.Play();
+                }
 
                 selectedSlot.transform.position = inventoryPosition[i].position;
                 Debug.Log("posicion de slot " + i);
@@ -117,17 +174,16 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
             }
 
             bool placed = state.SetInventoryBook(selectedSlotIndex);
+            Silence();
 
-            if(placed == true)
+            if (placed == true)
             {
+                Silence();
                 currentState = SelectionState.SelectingZone;
                 selectedSlot.SetActive(false);
                 Debug.Log("seleccionado");
-
             }
 
-
-            
         }
 
         if(Keyboard.current.escapeKey.wasPressedThisFrame)
@@ -138,6 +194,8 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
 
             currentState = SelectionState.SelectingZone;
         }
+
+        
     }
 
 
@@ -170,5 +228,14 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
 
         state.CancelSelection();
 
+    }
+
+    public void Silence()
+    {
+        archiverSound.Stop();
+        computerSound.Stop();
+        mirrorSound.Stop();
+        radioSound.Stop();
+        paintSound.Stop();
     }
 }

@@ -6,14 +6,17 @@ using UnityEngine.InputSystem;
 public class BooksPuzzleManager : MonoBehaviour
 {
 
-    [Header("Puzzle")]
+    [Header("Resuelto")]
     [SerializeField] private GameObject reward;
+    [SerializeField] private GameObject puzzleCamera;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject raycast;
+    [SerializeField] private GameObject chest;
     public bookZone[] slots;
 
     [SerializeField] private int[] answer = {0, 1, 2, 3, 4};
     private bool puzzleSolved = false;
 
-    private BookPuzzleInterface puzzleOff;
 
 
     public void CheckAnswer()
@@ -52,8 +55,15 @@ public class BooksPuzzleManager : MonoBehaviour
 
     void Solved()
     {
-       reward.SetActive(true);
-       puzzleOff.PuzzleModeOff(); //ver por que tira error
+        reward.SetActive(true);
+        Animator animChest = chest.GetComponent<Animator>();
+        animChest.SetTrigger("PuzzleSolved");
+        puzzleCamera.SetActive(false);
+        player.SetActive(true);
+        raycast.SetActive(true);
+
+        BoxCollider myCollider = gameObject.GetComponent<BoxCollider>();
+        myCollider.enabled = false;
     }
 
 }

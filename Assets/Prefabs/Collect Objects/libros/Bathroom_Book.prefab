@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0d7a73cf1110f4dbc6a65612158984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookObject
-  myself: {fileID: 2723888943627350614}
+  bookPuzzleLogic: {fileID: 0}
+  myself: {fileID: 2739515437059812373}
   whichBook: 4
   id: 12
+  audio: {fileID: 0}

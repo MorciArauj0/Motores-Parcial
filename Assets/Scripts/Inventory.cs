@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     Character character;
     [SerializeField] private List<ItemID> InventoryList = new List<ItemID>();
     public int objetosEnInventario => InventoryList.Count;
+    public List<ItemID> inventarioPublico => InventoryList;
 
     [SerializeField] private InventoryUI inventoryUI;
 
@@ -29,6 +30,7 @@ public class Inventory : MonoBehaviour
 
     public bool HasItem(ItemID id)
     {
+        ActualizarUI();
         return InventoryList.Contains(id);
     }
 
@@ -44,4 +46,13 @@ public class Inventory : MonoBehaviour
         inventoryUI.ActualizarInventario(InventoryList);
     }
 }
+
+    public ItemID GetItemID(int index)
+    {
+        if (index >= InventoryList.Count)
+        {
+            return 0;
+        }
+        return InventoryList[index];
+    }
 }
