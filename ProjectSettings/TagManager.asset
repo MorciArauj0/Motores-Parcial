@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - gameOver
+  - victory
+  - Reiniciar
+  - Menu
   layers:
   - Default
   - TransparentFX
