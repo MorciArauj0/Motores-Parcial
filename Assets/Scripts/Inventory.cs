@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     [Header("Variables")]
     Character character;
     [SerializeField] private List<ItemID> InventoryList = new List<ItemID>();
+    public int objetosEnInventario => InventoryList.Count;
 
     [SerializeField] private InventoryUI inventoryUI;
 
@@ -17,9 +18,13 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemID id)
     {
-        InventoryList.Add(id);
-        Debug.Log("al inventario" + id);
-        ActualizarUI();
+        if(!InventoryList.Contains(id))
+        {
+            InventoryList.Add(id);
+            Debug.Log("al inventario" + id);
+            ActualizarUI();
+        }
+        Debug.Log("ya lo tenes");
     }
 
     public bool HasItem(ItemID id)
