@@ -56,6 +56,22 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &-5649623810712799455
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tension
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 99380774d2813f24c8b8cb9b63b05eec
+  m_FloatValues:
+    bb0ab055561b6604e958c2816290e843: -10.345207
+    fcf461196bb8dad4e9a426b752b8132a: 1.04
+    fd0c9a4cad804324e9b2e595e351e296: 3
+    2506b86d4e4ed2e478e6b123f562391d: 9.925883
+    70ca59bdc486d1a4b9f2460946c85f5b: 20
+  m_TransitionOverrides: {}
 --- !u!244 &-3353654977810474661
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -133,6 +149,8 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: -5649623810712799455}
+  - {fileID: 2070349765395501434}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -148,7 +166,7 @@ AudioMixerController:
     - fb1c29ae7981c9649be91461c180df00
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 2070349765395501434}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -193,12 +211,12 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Exploracion
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 8e17f7e734239714fa9586bd82e60df9
   m_FloatValues:
     bb0ab055561b6604e958c2816290e843: -10.345207
-    fd0c9a4cad804324e9b2e595e351e296: -19.928473
+    fd0c9a4cad804324e9b2e595e351e296: 0
     2506b86d4e4ed2e478e6b123f562391d: 9.925883
     70ca59bdc486d1a4b9f2460946c85f5b: 20
   m_TransitionOverrides: {}
@@ -221,6 +239,22 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &2070349765395501434
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Urgencia
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 39ac4168625b0d8439ffc4b4d0975a6f
+  m_FloatValues:
+    bb0ab055561b6604e958c2816290e843: -10.345207
+    fcf461196bb8dad4e9a426b752b8132a: 1.08
+    fd0c9a4cad804324e9b2e595e351e296: 6
+    2506b86d4e4ed2e478e6b123f562391d: 9.925883
+    70ca59bdc486d1a4b9f2460946c85f5b: 20
+  m_TransitionOverrides: {}
 --- !u!244 &3591427638806112153
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
