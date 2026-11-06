@@ -89144,7 +89144,7 @@ MonoBehaviour:
   victoryScreen: {fileID: 400879896}
   restartButton: {fileID: 2091237898}
   menuButton: {fileID: 1113577319}
-  loopDuracion: 300
+  loopDuracion: 150
   loopsRestantes: 12
 --- !u!4 &584034355
 Transform:
