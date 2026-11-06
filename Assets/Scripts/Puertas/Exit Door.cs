@@ -1,26 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitDoor : MonoBehaviour
+public class ExitDoor : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject finalSign;
-    [SerializeField] private string scene;
+    [SerializeField] private GameObject Victory;
 
-    Character character;
 
-    public void UnlockDoor()
+    public void Interact()
     {
-        SceneManager.LoadScene("Victory");
+        Time.timeScale = 0f;
+        Victory.SetActive(true);
+        Debug.Log("salsite");
     }
+    
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("OnTriggerEnter con: " + other.gameObject.name);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("OnTriggerEnter con: " + other.gameObject.name);
-
-        Character character = other.gameObject.GetComponentInParent<Character>();
-        if(character != null && finalSign.activeSelf)
-        {
-            UnlockDoor();
-        }
-    }
+    //    Character character = other.gameObject.GetComponentInParent<Character>();
+    //    if(character != null && finalSign.activeSelf)
+    //    {
+    //        UnlockDoor();
+    //    }
+    //}
 }
