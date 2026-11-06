@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.ProBuilder.Shapes;
 
 public class Puertas : MonoBehaviour
@@ -6,11 +7,27 @@ public class Puertas : MonoBehaviour
     [Header("Variables")]
     public float openAngle = -90f;
 
+    [Header("Sonido")]
+    [SerializeField] private AudioClip sonidoPuerta;
+    [SerializeField] private AudioMixerGroup grupoSFX;
+    private AudioSource audioPuerta;
+
     [SerializeField] private GameObject pivot;
     [SerializeField] private BoxCollider door;
     private Quaternion openRotation;
     private Quaternion closedRotation;
     private bool isOpen = false;
+
+    void Awake()
+    {
+        audioPuerta = gameObject.AddComponent<AudioSource>();
+
+        audioPuerta.playOnAwake = false;
+        audioPuerta.loop = false;
+        audioPuerta.spatialBlend = 1f;
+        audioPuerta.clip = sonidoPuerta;
+        audioPuerta.outputAudioMixerGroup = grupoSFX;
+    }
 
     void Start()
     { 
@@ -28,6 +45,12 @@ public class Puertas : MonoBehaviour
             anim.SetTrigger("opening");
             anim.SetBool("isClosed", false);
             door.enabled = false;
+
+            if (sonidoPuerta != null)
+            {
+                audioPuerta.Play();
+            }
+
         }
         else
         {
