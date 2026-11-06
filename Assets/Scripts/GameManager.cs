@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
     private float timer = 0f;
     public float TiempoActual => timer;
 
+    [Header("Sonido de lámpara")]
+    [SerializeField] private AudioClip[] sonidosLampara;
+    [SerializeField] private AudioMixerGroup grupoSFX;
+
+    private AudioSource audioLampara;
+    private bool sonidoLamparaReproducido = false;
+
 
     void Awake()
     {
@@ -30,6 +37,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            //cosas del ruido de lámpara rota
+            audioLampara = gameObject.AddComponent<AudioSource>();
+            audioLampara.playOnAwake = false;
+            audioLampara.spatialBlend = 0f;
+            audioLampara.outputAudioMixerGroup = grupoSFX;
         }
         else
         {
@@ -54,6 +66,22 @@ public class GameManager : MonoBehaviour
 
         timer += Time.deltaTime;
 
+        if (timer >= loopDuracion - 1f && !sonidoLamparaReproducido)
+        {
+            if (sonidosLampara.Length > 0)
+            {
+                int sonidoElegido = Random.Range(0, sonidosLampara.Length);
+
+                audioLampara.clip = sonidosLampara[sonidoElegido];
+                audioLampara.time = 0f;
+                audioLampara.Play();
+
+                Invoke(nameof(DetenerSonidoLampara), 2f);
+            }
+
+            sonidoLamparaReproducido = true;
+        }
+
         if (timer >= loopDuracion)
         {
             Debug.Log("Reset por timer");
@@ -69,7 +97,7 @@ public class GameManager : MonoBehaviour
         //
 
         //congelar mouse
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -83,7 +111,11 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
+    }
 
+    private void DetenerSonidoLampara()
+    {
+        audioLampara.Stop();
     }
 
     public void ReiniciarLoop()
@@ -92,12 +124,13 @@ public class GameManager : MonoBehaviour
 
         loopsRestantes--;
         timer = 0f;
+        sonidoLamparaReproducido = false;
 
         if (loopsRestantes <= 0)
         {
             gameOver();
             return;
-        } 
+        }
 
         gameOverActivo = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
