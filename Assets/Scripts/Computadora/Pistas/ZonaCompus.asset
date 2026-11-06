@@ -16,7 +16,9 @@ MonoBehaviour:
   nombreHabitacion: Oficina principal
   desbloqueadaAlInicio: 1
   pistas:
-  - "Siempre se dejan un mont\xF3n de cosas tiradas por toda la oficina, fijate qu\xE9
-    pod\xE9s encontrar"
-  - "La \xFAltima vez que revis\xE9 hab\xEDa una llave por ah\xED"
-  - NOSE Q MAS PONER SON EJEMPLOS ESTOS
+  - "Conque atrapado donde las computadoras eh... Siempre se dejan un mont\xF3n de
+    \tcosas tiradas por toda la oficina, fijate qu\xE9 pod\xE9s encontrar."
+  - "Ahora que recuerdo, hoy fue mi turno de guardar las llaves, podr\xEDas revisar
+    \tpor mi escritorio si olvid\xE9 alguna \xBFRecuerdas cu\xE1l es no?"
+  - "\xBF\xBFC\xF3mo que no lo recuerdas?? Es justo frente a los ba\xF1os pero con
+    una gran vista a la ciudad."

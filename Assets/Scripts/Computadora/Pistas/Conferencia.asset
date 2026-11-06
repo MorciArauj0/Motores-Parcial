@@ -16,6 +16,9 @@ MonoBehaviour:
   nombreHabitacion: Sala de conferencias
   desbloqueadaAlInicio: 0
   pistas:
-  - pista 1
-  - pista 2
-  - pista 3
+  - "Esa radio insufrible, estar encerrado ah\xEC con eso debe ser horrible, recomiendo
+    que la apagues cu\xE1nto antes."
+  - "Si quieres m\xE1s razones para apagar esa cosa, dicen por ah\xED que su maldici\xF3n
+    consiste en atraer fantasmas, no querr\xE1s toparte con ellos."
+  - "Dicen que si te atrapan muy seguido te har\xE1n quedarte con ellos ah\xED por
+    siempre \xA1Apag\xE1la cu\xE1nto antes! "
