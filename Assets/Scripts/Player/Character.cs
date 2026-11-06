@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerInput))]
@@ -31,6 +32,15 @@ public class Character : MonoBehaviour
     [Header("Animaciones")]
     [SerializeField] private Animator animator;
 
+    [Header("Sonidos de pasos")]
+    [SerializeField] private AudioClip[] sonidosCaminar;
+    [SerializeField] private AudioClip sonidoCorrer;
+    [SerializeField] private AudioMixerGroup grupoSFX;
+
+    private AudioSource audioPasos;
+    private float tiempoEntrePasos = 0.5f;
+    private float temporizadorPasos = 0f;
+    private int ultimoPaso = -1;
 
     [Header("Gravedad")]
     private float gravity = -9.81f;
@@ -63,6 +73,13 @@ public class Character : MonoBehaviour
         animator = GetComponent<Animator>();
 
         speed = normalSpeed;
+
+        audioPasos = gameObject.AddComponent<AudioSource>();
+
+        audioPasos.playOnAwake = false;
+        audioPasos.loop = false;
+        audioPasos.spatialBlend = 1f;
+        audioPasos.outputAudioMixerGroup = grupoSFX;
     }
 
     void Update()
@@ -96,6 +113,7 @@ public class Character : MonoBehaviour
         HandleLook();
         ApplyGravity();
         HandleAnimations();
+        HandleFootsteps();
     }
 
     private void HandleMovement()
@@ -156,4 +174,67 @@ public class Character : MonoBehaviour
             }
         }
     }
+
+    private void HandleFootsteps()
+    {
+        bool isGrounded = characterController.isGrounded;
+        bool isMoving = inputVector.magnitude > 0.1f;
+
+        if (!isGrounded || !isMoving)
+        {
+            if (audioPasos.loop)
+            {
+                audioPasos.Stop();
+                audioPasos.loop = false;
+            }
+
+            temporizadorPasos = 0f;
+            return;
+        }
+
+        bool running = playerInput.actions["Run"].IsPressed();
+
+        if (running)
+        {
+            if (!audioPasos.isPlaying && sonidoCorrer != null)
+            {
+                audioPasos.clip = sonidoCorrer;
+                audioPasos.loop = true;
+                audioPasos.Play();
+            }
+        }
+        else
+        {
+            if (audioPasos.loop)
+            {
+                audioPasos.Stop();
+                audioPasos.loop = false;
+            }
+
+            tiempoEntrePasos = 0.5f;
+            temporizadorPasos -= Time.deltaTime;
+
+            if (temporizadorPasos <= 0f)
+            {
+                if (sonidosCaminar.Length > 0)
+                {
+                    int nuevoPaso;
+
+                    do
+                    {
+                        nuevoPaso = Random.Range(0, sonidosCaminar.Length);
+                    }
+                    while (sonidosCaminar.Length > 1 &&
+                           nuevoPaso == ultimoPaso);
+
+                    ultimoPaso = nuevoPaso;
+                    audioPasos.PlayOneShot(sonidosCaminar[nuevoPaso]);
+                }
+
+                temporizadorPasos = tiempoEntrePasos;
+            }
+        }
+    }
 }
+
+//al fin suena normal cuando corre el gil este ya me estaba por matar en vivo
