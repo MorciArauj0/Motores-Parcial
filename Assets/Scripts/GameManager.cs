@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Configuración del Loop")]
     [SerializeField] public float loopDuracion = 300f;
+
     [SerializeField] public int loopsRestantes = 5;
     private float timer = 0f;
     public float TiempoActual => timer;

@@ -14,4 +14,14 @@ public class ReiniciarJuego : MonoBehaviour
         SceneManager.LoadScene("Office");
     }
 
+    public void ToMenu()
+    {
+        if (GameManager.Instance != null)
+        {
+            Destroy(GameManager.Instance.gameObject);
+        }
+
+        SceneManager.LoadScene("Start");
+    }
+
 }
