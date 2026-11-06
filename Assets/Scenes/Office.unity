@@ -75267,7 +75267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: efa41b2a091f23b47adee63cfeba4ee2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8641790461128013279, guid: efa41b2a091f23b47adee63cfeba4ee2, type: 3}
       propertyPath: m_Layer
@@ -163963,7 +163963,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114248515}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2110960110855195114, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
   m_audioClip: {fileID: 0}
@@ -164053,16 +164053,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!165 &1114248524
-AudioHighPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114248515}
-  m_Enabled: 1
-  m_CutoffFrequency: 5000
-  m_HighpassResonanceQ: 1
 --- !u!43 &1114542546
 Mesh:
   m_ObjectHideFlags: 0
@@ -165528,7 +165518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c53bfeb935d8353459cc1381eed7b322, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -302255,9 +302245,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1028609739877690565, guid: b421a3653a5676641b6878ac58330f9a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1114248519}
-    - targetCorrespondingSourceObject: {fileID: 1028609739877690565, guid: b421a3653a5676641b6878ac58330f9a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1114248524}
   m_SourcePrefab: {fileID: 100100000, guid: b421a3653a5676641b6878ac58330f9a, type: 3}
 --- !u!4 &1558638585 stripped
 Transform:
