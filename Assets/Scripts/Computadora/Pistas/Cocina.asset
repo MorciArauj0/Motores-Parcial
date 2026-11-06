@@ -16,6 +16,8 @@ MonoBehaviour:
   nombreHabitacion: Cocina
   desbloqueadaAlInicio: 1
   pistas:
-  - pista 1
-  - pista2
-  - pista3
+  - "No hay mucho que hacer por ah\xED, quiz\xE1 encuentres algo que te sea \xFAtil."
+  - "Creo que por alg\xFAn lugar de ah\xED guardaban los elementos de ba\xF1o \xBFTe
+    sirve?"
+  - "\xBFY si llevas las cosas a su lugar? Ya que no tienes nada que hacer puede
+    intentar ordenar un poco."

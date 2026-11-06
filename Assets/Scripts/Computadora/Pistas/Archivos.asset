@@ -16,6 +16,10 @@ MonoBehaviour:
   nombreHabitacion: Sala de archivos
   desbloqueadaAlInicio: 0
   pistas:
-  - pista 1
-  - pista 2
-  - pista 3
+  - "Creo que dej\xE9 la llave de la sala de reuniones en uno de los archiveros...
+    \xA1No te preocupes no est\xE1 hasta el fondo, lo juro!"
+  - "Hablando del fondo \xBFAlguna vez fu\xEDste hasta ah\xED? Podr\xEDa ser tu oportunidad
+    para explorarlo, podr\xEDa ser interesante."
+  - "Seg\xFAn o\xED de nuestros compa\xF1eros, no es dif\xEDcil llegar al final:
+    dobla a la izquierda en el segundo pasillo, a la izquierda otra vez, luego ve
+    todo derecho y ya estas en el final. F\xE1cil \xBFNo?"
