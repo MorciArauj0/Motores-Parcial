@@ -13,6 +13,9 @@ public class DialogoUI : MonoBehaviour
     [SerializeField] private Transform contenedorBotones;
     [SerializeField] private Button botonUI;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clipTecla;
+
     private PlayerInput playerInput;
 
     public bool Abierto => panel.activeSelf; // para que el gamemanager sepa que está en la pantalla de diálogo
@@ -35,9 +38,23 @@ public class DialogoUI : MonoBehaviour
             int indice = i;
             Button boton = Instantiate(botonUI, contenedorBotones);
             boton.GetComponentInChildren<TMP_Text>().text = etiquetas[i];
-            boton.onClick.AddListener(() => alElegir(indice));
+            boton.onClick.AddListener(() => 
+            {
+                ReproducirClick();
+                alElegir(indice);
+            });
         }
     }
+
+    private void ReproducirClick()
+    {
+        if (audioSource != null && clipTecla != null)
+        {
+            audioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(clipTecla);
+        }
+    }
+
 
     private void Abrir()
     {
