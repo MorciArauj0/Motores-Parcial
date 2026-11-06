@@ -9966,8 +9966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de93deda4c9dc94da715224fde2ef55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
-  finalSign: {fileID: 0}
-  scene: 
+  Victory: {fileID: 400879896}
 --- !u!65 &90067638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34068,7 +34067,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 246534751}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 400879900}
+        m_TargetAssemblyTypeName: ReiniciarJuego, Assembly-CSharp
+        m_MethodName: Reiniciar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &246534751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58255,6 +58266,7 @@ GameObject:
   - component: {fileID: 400879897}
   - component: {fileID: 400879899}
   - component: {fileID: 400879898}
+  - component: {fileID: 400879900}
   m_Layer: 5
   m_Name: victory
   m_TagString: victory
@@ -58323,6 +58335,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400879896}
   m_CullTransparentMesh: 1
+--- !u!114 &400879900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400879896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cafd7f3ca43cc4d8d03c0e4514f04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReiniciarJuego
 --- !u!1 &401295152
 GameObject:
   m_ObjectHideFlags: 0
@@ -64337,8 +64361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de93deda4c9dc94da715224fde2ef55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
-  finalSign: {fileID: 439346340}
-  scene: Victory
+  Victory: {fileID: 0}
 --- !u!54 &446558925
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104907,6 +104930,7 @@ GameObject:
   - component: {fileID: 700803779}
   - component: {fileID: 700803781}
   - component: {fileID: 700803780}
+  - component: {fileID: 700803782}
   m_Layer: 5
   m_Name: gameOver
   m_TagString: gameOver
@@ -104975,6 +104999,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700803778}
   m_CullTransparentMesh: 1
+--- !u!114 &700803782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700803778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cafd7f3ca43cc4d8d03c0e4514f04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReiniciarJuego
 --- !u!1001 &701334469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116149,8 +116185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de93deda4c9dc94da715224fde2ef55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
-  finalSign: {fileID: 439346340}
-  scene: Victory
+  Victory: {fileID: 0}
 --- !u!54 &764144488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163839,7 +163874,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113577320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 700803782}
+        m_TargetAssemblyTypeName: ReiniciarJuego, Assembly-CSharp
+        m_MethodName: ToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1113577320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257924,7 +257971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53acb386445a3dc498fc6586e62a4003, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29010963
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53acb386445a3dc498fc6586e62a4003, type: 3}
       propertyPath: m_LocalPosition.y
@@ -257932,7 +257979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53acb386445a3dc498fc6586e62a4003, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.187211
+      value: 1.247
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53acb386445a3dc498fc6586e62a4003, type: 3}
       propertyPath: m_LocalRotation.w
@@ -337881,7 +337928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1816075174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -359872,7 +359919,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1982252789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 400879900}
+        m_TargetAssemblyTypeName: ReiniciarJuego, Assembly-CSharp
+        m_MethodName: ToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1982252789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375628,7 +375687,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2091237899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 700803782}
+        m_TargetAssemblyTypeName: ReiniciarJuego, Assembly-CSharp
+        m_MethodName: Reiniciar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2091237899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382498,7 +382569,7 @@ MonoBehaviour:
   id: 4
   inventory: {fileID: 602015428}
   itemMust: 8
-  puzzleComplete: {fileID: 0}
+  puzzleComplete: {fileID: 90067635}
   missingObject: {fileID: 62301240}
   dropObjectPrefab: {fileID: 0}
   spawnPoint: {fileID: 0}
