@@ -16,6 +16,11 @@ MonoBehaviour:
   nombreHabitacion: Oficina del Jefe
   desbloqueadaAlInicio: 0
   pistas:
-  - y q esperas flaco sali
-  - pista 2
-  - pista 3
+  - "El jefe realmente dice amar a todas sus antig\xFCedades por igual, pero la forma
+    en que trata esos libros a comparaci\xF3n del reloj me hace dudar que eso sea
+    cierto."
+  - "\xBFC\xF3mo puede saber en qu\xE9 orden leer esos libros si tienen todos la
+    misma tapa? La otra vez lo o\xED decir que eran como m\xFAsica para sus o\xEDdos,
+    raro dicho para usarlo con un libro."
+  - "\xBFSabes? No suelo ir seguido a la oficina del jefe, pero cuando entro siento
+    un ambiente familiar, como una melod\xEDa que escuch\xE9 en otro lado."

@@ -86064,7 +86064,7 @@ Animator:
   m_GameObject: {fileID: 573318783}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1471ce7fd9f93c946ba65094a70bfacd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 75699230c3d6d9c4388c220bb0b9f6cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -382945,8 +382945,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompuProta
   lineasPresentacion:
-  - hola soy la compu
-  - te voy a ayudar
+  - "Si me escribes a estas horas, asumo debes de haberte quedado atrapado en el
+    bucle como te lo advert\xED. Ten cuidado que tus intentos no son infinitos."
+  - "Para tu suerte, sab\xEDa que esto pasar\xEDa as\xED que hice algunas investigaciones
+    para ayudarte a salir de ah\xED y que no te sientas tan solo en el proceso."
   todosLosPuzzles:
   - {fileID: 11400000, guid: b6f20d1fd6ab68a4484246104dbf730e, type: 2}
   - {fileID: 11400000, guid: d0817cd9f70cfef47b862b3307b93f4a, type: 2}
