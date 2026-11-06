@@ -6944,6 +6944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 8
+  sfxGeneral: {fileID: 62301246}
+  sfxLlave: {fileID: 8300000, guid: 081bbe9baac58dc4a8b7e182fe03ec97, type: 3}
 --- !u!65 &62301243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6965,6 +6967,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9746433, y: 0.38900706, z: 0.6059625}
   m_Center: {x: -0.015069038, y: 0.17023636, z: -0.008655131}
+--- !u!82 &62301246
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62301240}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 081bbe9baac58dc4a8b7e182fe03ec97, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!43 &62305007
 Mesh:
   m_ObjectHideFlags: 0
@@ -21052,6 +21151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 1
+  sfxGeneral: {fileID: 176545188}
+  sfxLlave: {fileID: 0}
 --- !u!65 &176545185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22362,6 +22463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 5
+  sfxGeneral: {fileID: 188380836}
+  sfxLlave: {fileID: 8300000, guid: 081bbe9baac58dc4a8b7e182fe03ec97, type: 3}
 --- !u!65 &188380833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22383,6 +22486,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6156552, y: 0.04853437, z: 2.2555566}
   m_Center: {x: 0.17546603, y: 0.000000018626451, z: -0.18985677}
+--- !u!82 &188380836
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188380830}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 081bbe9baac58dc4a8b7e182fe03ec97, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &189496360
 GameObject:
   m_ObjectHideFlags: 0
@@ -89654,6 +89854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 3
+  sfxGeneral: {fileID: 589755685}
+  sfxLlave: {fileID: 0}
 --- !u!65 &589755682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147091,6 +147293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 0
+  sfxGeneral: {fileID: 1025217708}
+  sfxLlave: {fileID: 0}
 --- !u!65 &1025217704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -154052,6 +154256,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6127923582304190372, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
   m_PrefabInstance: {fileID: 5081923046933303591}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1044338012
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194312802}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 081bbe9baac58dc4a8b7e182fe03ec97, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1045704855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1796515038612204800, guid: f45fca8e04cf64846862a0f480cb5115, type: 3}
@@ -256667,6 +256968,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25294be3f14699041af8099cc3255d3c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 188380832}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25294be3f14699041af8099cc3255d3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 188380836}
   m_SourcePrefab: {fileID: 100100000, guid: 25294be3f14699041af8099cc3255d3c, type: 3}
 --- !u!1001 &1243563388
 PrefabInstance:
@@ -322432,6 +322736,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25294be3f14699041af8099cc3255d3c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 62301242}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 25294be3f14699041af8099cc3255d3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 62301246}
   m_SourcePrefab: {fileID: 100100000, guid: 25294be3f14699041af8099cc3255d3c, type: 3}
 --- !u!43 &1659714482
 Mesh:
@@ -327453,6 +327760,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 7
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &1710234229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -372249,6 +372558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 2
+  sfxGeneral: {fileID: 2053572266}
+  sfxLlave: {fileID: 0}
 --- !u!65 &2053572263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -386921,10 +387232,21 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.010454178
       objectReference: {fileID: 0}
+    - target: {fileID: 8784357523522846633, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
+      propertyPath: sfxLlave
+      value: 
+      objectReference: {fileID: 8300000, guid: 081bbe9baac58dc4a8b7e182fe03ec97, type: 3}
+    - target: {fileID: 8784357523522846633, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
+      propertyPath: sfxGeneral
+      value: 
+      objectReference: {fileID: 1044338012}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6791730240701506846, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1044338012}
   m_SourcePrefab: {fileID: 100100000, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
 --- !u!4 &5203097965927108917
 Transform:
