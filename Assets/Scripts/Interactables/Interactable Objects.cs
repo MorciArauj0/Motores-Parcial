@@ -14,6 +14,9 @@ public class InteractableObjects : MonoBehaviour, IInteractable
     [SerializeField] Inventory inventory;
     [SerializeField] private ItemID itemMust;
 
+    [SerializeField] private AudioClip sfxColocarObjeto;
+    [SerializeField] private AudioSource audioSource;
+
     [SerializeField] private GameObject puzzleComplete;
     [SerializeField] private GameObject missingObject;
     [SerializeField] private GameObject dropObjectPrefab;
@@ -31,6 +34,18 @@ public class InteractableObjects : MonoBehaviour, IInteractable
         if (inventory != null && inventory.HasItem(itemMust))
         {
             inventory.RemoveItem(itemMust);
+
+            if (sfxColocarObjeto != null)
+            {
+                if (audioSource != null)
+                {
+                    audioSource.GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(sfxColocarObjeto.GetComponent<AudioSource>().clip, transform.position);
+                }
+            }
 
             if (missingObject != null) missingObject.SetActive(true);
 
