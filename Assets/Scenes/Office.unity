@@ -89008,8 +89008,12 @@ MonoBehaviour:
   victoryScreen: {fileID: 400879896}
   restartButton: {fileID: 2091237898}
   menuButton: {fileID: 1113577319}
-  loopDuracion: 300
+  loopDuracion: 150
   loopsRestantes: 12
+  sonidosLampara:
+  - {fileID: 8300000, guid: 63b81c1b45c6d8e488608a80f39c82a4, type: 3}
+  - {fileID: 8300000, guid: f66bc17bd3e2b5e489a2ea8c8c785826, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!4 &584034355
 Transform:
   m_ObjectHideFlags: 0
