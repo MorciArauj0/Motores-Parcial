@@ -387064,6 +387064,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: grupoSFX
+      value: 
+      objectReference: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: sonidoCorrer
+      value: 
+      objectReference: {fileID: 8300000, guid: c513aad69d24252408bf97c11e817e48, type: 3}
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: sonidosCaminar.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: 'sonidosCaminar.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: c363a5a20205c5e47afbf4a008e44ef8, type: 3}
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: 'sonidosCaminar.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b5ec80f7f4c4d83419fe4514da8a944b, type: 3}
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: 'sonidosCaminar.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ee0edb5c8025b75469c74bb9cdf24bab, type: 3}
     - target: {fileID: 615992953245064795, guid: 3da9041e466fbe84d93691a259325084, type: 3}
       propertyPath: inventoryUI
       value: 
