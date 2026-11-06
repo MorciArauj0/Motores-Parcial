@@ -6680,7 +6680,7 @@ PrefabInstance:
       objectReference: {fileID: 1159586840}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10433
+      value: 10439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6721,6 +6721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 59304751}
   door: {fileID: 0}
 --- !u!114 &59304759
@@ -6942,6 +6944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 8
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &62301243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15689,7 +15693,7 @@ PrefabInstance:
       objectReference: {fileID: 374194257}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10433
+      value: 10439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21173,6 +21177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 1
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &176545185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21683,6 +21689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 180622639}
   door: {fileID: 1571196973}
 --- !u!43 &180765925
@@ -22384,6 +22392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 5
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &188380833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26410,6 +26420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1728248091}
   door: {fileID: 0}
 --- !u!114 &191862689
@@ -29035,6 +29047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1147488148}
   door: {fileID: 0}
 --- !u!114 &214478718
@@ -37374,7 +37388,7 @@ AudioSource:
   MinDistance: 10.19
   MaxDistance: 17.01
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -37619,6 +37633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 261789862}
   door: {fileID: 0}
 --- !u!114 &261789874
@@ -63810,6 +63826,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1340690969}
   door: {fileID: 0}
 --- !u!114 &444450191
@@ -76043,6 +76061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1682773252}
   door: {fileID: 0}
 --- !u!114 &531757249
@@ -86210,6 +86230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 573318783}
   door: {fileID: 1230484287}
 --- !u!95 &573318788
@@ -86549,6 +86571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 575903998}
   door: {fileID: 1278801979}
 --- !u!95 &575904003
@@ -89690,6 +89714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 3
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &589755682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92675,6 +92701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1564824728}
   door: {fileID: 606231965}
 --- !u!114 &606231968
@@ -96798,7 +96826,7 @@ PrefabInstance:
       objectReference: {fileID: 62305007}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10433
+      value: 10439
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2110968830220731344, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
@@ -146862,6 +146890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 0
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &1025217704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -253765,6 +253795,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 573318783}
   door: {fileID: 1230484287}
 --- !u!54 &1230484286
@@ -261896,6 +261928,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 575903998}
   door: {fileID: 1278801979}
 --- !u!65 &1278801979
@@ -275018,6 +275052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 2088752356}
   door: {fileID: 1383258657}
 --- !u!54 &1383258656
@@ -276244,6 +276280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1389315466}
   door: {fileID: 1389315468}
 --- !u!95 &1389315483
@@ -284186,6 +284224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1442026350}
   door: {fileID: 1781325833}
 --- !u!95 &1442026365
@@ -303667,6 +303707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1564824728}
   door: {fileID: 606231965}
 --- !u!95 &1564824733
@@ -304709,6 +304751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 180622639}
   door: {fileID: 1571196973}
 --- !u!114 &1571196976
@@ -321022,6 +321066,8 @@ MonoBehaviour:
   texto: {fileID: 1171164843}
   contenedorBotones: {fileID: 1496645651}
   botonUI: {fileID: 7741374766477089412, guid: 9e360fe25e76491469f5e31912701c5f, type: 3}
+  audioSource: {fileID: 0}
+  clipTecla: {fileID: 0}
 --- !u!4 &1650081573
 Transform:
   m_ObjectHideFlags: 0
@@ -323884,6 +323930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1682773252}
   door: {fileID: 531757246}
 --- !u!95 &1682773257
@@ -326913,6 +326961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 7
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &1710234229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -327495,6 +327545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 184619550}
   door: {fileID: 0}
 --- !u!114 &1715005052
@@ -334056,6 +334108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1781325831}
   door: {fileID: 1781325833}
 --- !u!114 &1781325844
@@ -342353,7 +342407,7 @@ PrefabInstance:
       objectReference: {fileID: 1613896570}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10433
+      value: 10439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -343642,7 +343696,7 @@ PrefabInstance:
       objectReference: {fileID: 98720479}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10370
+      value: 10373
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -350811,7 +350865,7 @@ PrefabInstance:
       objectReference: {fileID: 2055248677}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10370
+      value: 10373
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -350861,6 +350915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1909715096}
   door: {fileID: 0}
 --- !u!114 &1909715104
@@ -355161,6 +355217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 1940750087}
   door: {fileID: 0}
 --- !u!114 &1940750099
@@ -368641,6 +368699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 2031189711}
   door: {fileID: 2089427631}
 --- !u!95 &2031189716
@@ -372059,6 +372119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectObjects
   id: 2
+  sfxGeneral: {fileID: 0}
+  sfxLlave: {fileID: 0}
 --- !u!65 &2053572263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -375050,6 +375112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 2088752356}
   door: {fileID: 1383258657}
 --- !u!95 &2088752361
@@ -375296,6 +375360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 2031189711}
   door: {fileID: 2089427631}
 --- !u!54 &2089427630
@@ -376930,6 +376996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 2103569997}
   door: {fileID: 1781325833}
 --- !u!95 &2103570012
@@ -379244,7 +379312,7 @@ PrefabInstance:
       objectReference: {fileID: 732226422}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10433
+      value: 10439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -386542,6 +386610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 5068072447492679328}
   door: {fileID: 0}
 --- !u!114 &5068072447492679340
@@ -387054,7 +387124,7 @@ PrefabInstance:
       objectReference: {fileID: 997006567}
     - target: {fileID: 9217820011722029811, guid: 9b4127076fa094d46b0d04323f8b2e7d, type: 3}
       propertyPath: m_VersionIndex
-      value: 10433
+      value: 10439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -387090,6 +387160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::Puertaba\xF1o"
   openAngle: 90
+  sonidoPuerta: {fileID: 0}
+  grupoSFX: {fileID: 0}
   pivot: {fileID: 5997749300311934984}
   door: {fileID: 0}
 --- !u!114 &5997749300311934992

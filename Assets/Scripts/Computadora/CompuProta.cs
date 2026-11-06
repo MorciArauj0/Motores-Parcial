@@ -12,6 +12,7 @@ public class CompuProta : MonoBehaviour, IInteractable
 {
     public static CompuProta Instance;
 
+
     [Header("Presentación")]
     [TextArea(2, 4)]
     [SerializeField] private string[] lineasPresentacion;
@@ -149,4 +150,5 @@ public class CompuProta : MonoBehaviour, IInteractable
         foreach (var d in desbloqueosPorItem)
             if (d.item == item) DesbloquearHabitacion(d.idHabitacion);
     }
+
 }
