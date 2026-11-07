@@ -58674,7 +58674,7 @@ GameObject:
   - component: {fileID: 401295155}
   - component: {fileID: 401295154}
   m_Layer: 14
-  m_Name: Plane
+  m_Name: Cerrar cajon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329009,7 +329009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6115ad9b238f0f84daedea4b92a60c8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.653605
+      value: 22.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6115ad9b238f0f84daedea4b92a60c8e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -335795,7 +335795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966899220183691034, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
       propertyPath: m_Size.x
-      value: 1.8033384
+      value: 1.0814527
       objectReference: {fileID: 0}
     - target: {fileID: 6966899220183691034, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
       propertyPath: m_Size.y
@@ -335807,7 +335807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966899220183691034, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
       propertyPath: m_Center.x
-      value: -0.038013615
+      value: 0.32292888
       objectReference: {fileID: 0}
     - target: {fileID: 6966899220183691034, guid: 2e4deac2409c46944a1c5aadee52fbff, type: 3}
       propertyPath: m_Center.y
@@ -384291,8 +384291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompuProta
   lineasPresentacion:
-  - "Si me escribes a estas horas, asumo debes de haberte quedado atrapado en el
-    bucle como te lo advert\xED. Ten cuidado que tus intentos no son infinitos."
+  - "Si me escrib\xEDs a estas horas, asumo que te quedaste atrapado en el bucle
+    como te lo advert\xED. Ten cuidado que tus intentos no son infinitos."
   - "Para tu suerte, sab\xEDa que esto pasar\xEDa as\xED que hice algunas investigaciones
     para ayudarte a salir de ah\xED y que no te sientas tan solo en el proceso."
   todosLosPuzzles:
