@@ -26,6 +26,7 @@ public class BathroomPuzzle : MonoBehaviour
     private bool allObjectsSetted = false;
 
 
+    private bool llaveColectada = false;
     private bool puzzleComplete = false;
 
     
@@ -108,8 +109,9 @@ public class BathroomPuzzle : MonoBehaviour
         }
 
 
-        if(puzzleComplete == true)
+        if(puzzleComplete == true && llaveColectada == false)
         {
+            llaveColectada = true;
             reward.SetActive (true);
             Debug.Log("llave");
         }

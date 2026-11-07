@@ -166598,7 +166598,7 @@ PrefabInstance:
     - target: {fileID: 4525500798580953987, guid: 547b3a9be96e4d34fa605adc1ad23310, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7b9411b8a95ed07468954865bb2b0a55, type: 2}
+      objectReference: {fileID: 2100000, guid: 8df26a9f4f16abc4a8f0f8ff6af8f711, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -168942,7 +168942,7 @@ PrefabInstance:
     - target: {fileID: 7544697861078697172, guid: 3428c4f3b30cc324d8de0906f55f780d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7621b84afc1d615428c43d81cb3064c8, type: 2}
+      objectReference: {fileID: 2100000, guid: 8df26a9f4f16abc4a8f0f8ff6af8f711, type: 2}
     - target: {fileID: 8337529376078914817, guid: 3428c4f3b30cc324d8de0906f55f780d, type: 3}
       propertyPath: m_Name
       value: Meetings_Book
@@ -172086,7 +172086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  m_Color: {r: 0.08295462, g: 0.09433961, b: 0.080544665, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -172740,15 +172740,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: texto ejemplo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
+  m_sharedMaterial: {fileID: -699112959996641730, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278230064
+  m_fontColor: {r: 0.1878902, g: 0.6132076, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -173554,7 +173554,7 @@ PrefabInstance:
     - target: {fileID: 484029985638280703, guid: 8808b1375e2769e49b3bcf4f7e2af90d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2626ae0d65b4a6e47a25042a285aa517, type: 2}
+      objectReference: {fileID: 2100000, guid: 8df26a9f4f16abc4a8f0f8ff6af8f711, type: 2}
     - target: {fileID: 1656394930068952720, guid: 8808b1375e2769e49b3bcf4f7e2af90d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -128.05
@@ -263798,7 +263798,7 @@ PrefabInstance:
     - target: {fileID: 6047809113056821001, guid: 89cdfa333dd4eeb42bebeee116515ebc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ee10f70305cf1a44fb7d72be8c5f6727, type: 2}
+      objectReference: {fileID: 2100000, guid: 8df26a9f4f16abc4a8f0f8ff6af8f711, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -339155,7 +339155,7 @@ PrefabInstance:
     - target: {fileID: 4862422587541386231, guid: acaed41b41fff1843a7a331506a4e1cc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4c1634ddd57ca1942acdefff114707cf, type: 2}
+      objectReference: {fileID: 2100000, guid: 8df26a9f4f16abc4a8f0f8ff6af8f711, type: 2}
     - target: {fileID: 5994826877211150488, guid: acaed41b41fff1843a7a331506a4e1cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 87.62
