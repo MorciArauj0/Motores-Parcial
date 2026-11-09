@@ -19,7 +19,7 @@ public class BathroomPuzzle : MonoBehaviour
     [Header("Puzzle")]
     [SerializeField] private GameObject reward;
 
-    private bool correctDoorOpen = false;
+    private bool correctDoorOpen;
     private bool allDoorsClose = true;
 
     private bool collectComplete = false;
@@ -32,9 +32,10 @@ public class BathroomPuzzle : MonoBehaviour
     
     void Update()
     {
-        //recolección de objetos
+        Vector3 abierto = new Vector3(0, 90, 0);
         Vector3 rotacionPuertaCorrecta = correctDoor.transform.eulerAngles;
 
+        //recolección de objetos
         for (int i = 0; i <= 2; i++)
         {
             if (bathroomCollect[i].activeSelf == true)
@@ -48,8 +49,6 @@ public class BathroomPuzzle : MonoBehaviour
                 if (Keyboard.current.gKey.wasPressedThisFrame) { Debug.Log("listo colecta"); }
             }
         }
-        
-
 
         //colocar objetos
         if(inventory.HasItem(vase) || inventory.HasItem(broom) || inventory.HasItem(paper))
@@ -62,46 +61,48 @@ public class BathroomPuzzle : MonoBehaviour
             if (Keyboard.current.qKey.wasPressedThisFrame) { Debug.Log("pusiste todo, tal vez"); }
         }
 
+
         //puertas
-        for(int i = 0; i <= 2; i++)
+        for (int i = 0; i <= 2; i++)
         {
-            int doorsClosed = 0;
-            Vector3 rotacion = bathroomCollect[i].transform.eulerAngles;
-            Vector3 cerrado = new Vector3 (0, 0, 0);
-            if(rotacion != cerrado)
+            Vector3 rotacionActual = othersDoors[i].transform.eulerAngles;
+
+            if (Keyboard.current.zKey.wasPressedThisFrame) { Debug.Log("Puerta " + i + " " + rotacionActual); }
+
+            if (rotacionActual != abierto)
             {
-                doorsClosed++;
-                if (doorsClosed == 3)
-                {
-                    allDoorsClose = true;
-                    if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("todo cerrado"); }
-                    break;
-                }
-                if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("todo cerrado"); }
+                allDoorsClose = true;
             }
-            else
+            else if (rotacionActual == abierto)
             {
-                doorsClosed = 0;
                 allDoorsClose = false;
-                if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("alguna abierta"); }
                 break;
             }
-
-            
         }
 
-        if(rotacionPuertaCorrecta != new Vector3 (0, 90, 0))
+        if (allDoorsClose == true)
         {
-            correctDoorOpen = false;
+            if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("todo cerrado"); }
         }
         else
+        {
+            if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("alguna abierta"); }
+        }
+
+
+        //puerta correcta
+        if (rotacionPuertaCorrecta == new Vector3(0, 90, 0))
         {
             correctDoorOpen = true;
             if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("puerta correcta abierta"); }
         }
+        else
+        {
+            correctDoorOpen = false;
+            if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("puerta correcta cerrada"); }
+        }
 
         //condiciones puzzle
-
         if (collectComplete == true && allDoorsClose == true && correctDoorOpen == true && allObjectsSetted == true)
         {
             puzzleComplete = true;
@@ -114,6 +115,21 @@ public class BathroomPuzzle : MonoBehaviour
             llaveColectada = true;
             reward.SetActive (true);
             Debug.Log("llave");
+        }
+    }
+
+    void CheckCorrectDoor()
+    {
+        Vector3 rotacionPuertaCorrecta = correctDoor.transform.eulerAngles;
+        if (rotacionPuertaCorrecta == new Vector3(0, 90, 0))
+        {
+            correctDoorOpen = true;
+            if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("puerta correcta abierta"); }
+        }
+        else
+        {
+            correctDoorOpen = false;
+            if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("puerta correcta cerrada"); }
         }
     }
 }
