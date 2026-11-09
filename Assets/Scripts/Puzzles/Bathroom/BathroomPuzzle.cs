@@ -129,7 +129,7 @@ public class BathroomPuzzle : MonoBehaviour
         if (collectComplete == true && allDoorsClose == true && correctDoorOpen == true && allObjectsSetted == true)
         {
             puzzleComplete = true;
-            Debug.Log("listo baño");
+            if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("listo baño"); }
         }
 
 
