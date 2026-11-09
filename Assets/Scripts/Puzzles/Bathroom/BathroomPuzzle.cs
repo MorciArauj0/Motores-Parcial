@@ -29,10 +29,11 @@ public class BathroomPuzzle : MonoBehaviour
     private bool llaveColectada = false;
     private bool puzzleComplete = false;
 
-    
+    Vector3 abierto = new Vector3(0, 90, 0);
+
     void Update()
     {
-        Vector3 abierto = new Vector3(0, 90, 0);
+        
         Vector3 rotacionPuertaCorrecta = correctDoor.transform.eulerAngles;
 
         //recolección de objetos
@@ -63,30 +64,52 @@ public class BathroomPuzzle : MonoBehaviour
 
 
         //puertas
-        for (int i = 0; i <= 2; i++)
+        if(othersDoors[0].transform.eulerAngles != abierto && othersDoors[1].transform.eulerAngles != abierto && othersDoors[2].transform.eulerAngles != abierto)
         {
-            Vector3 rotacionActual = othersDoors[i].transform.eulerAngles;
-
-            if (Keyboard.current.zKey.wasPressedThisFrame) { Debug.Log("Puerta " + i + " " + rotacionActual); }
-
-            if (rotacionActual != abierto)
-            {
-                allDoorsClose = true;
-            }
-            else if (rotacionActual == abierto)
-            {
-                allDoorsClose = false;
-                break;
-            }
-        }
-
-        if (allDoorsClose == true)
-        {
-            if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("todo cerrado"); }
+            allDoorsClose = true;
         }
         else
         {
-            if (Keyboard.current.xKey.wasPressedThisFrame) { Debug.Log("alguna abierta"); }
+            allDoorsClose = false;
+        }
+
+        
+        
+        //for (int i = 0; i <3; i++)
+        //{
+        //    Vector3 rotacionActual = othersDoors[i].transform.eulerAngles;
+
+        //    if (Keyboard.current.zKey.wasPressedThisFrame) { Debug.Log("Puerta " + i + " " + rotacionActual); }
+
+        //    if (rotacionActual != new Vector3(0, 90, 0))
+        //    {
+        //        allDoorsClose = true;
+        //    }
+        //    else 
+        //    {
+        //        allDoorsClose = false;
+        //        break;
+        //    }
+        //}
+
+        
+        if (allDoorsClose == true)
+        {
+            if (Keyboard.current.xKey.wasPressedThisFrame) { 
+                Debug.Log("todo cerrado");
+                Debug.Log("Puerta 0 " + othersDoors[0].transform.eulerAngles);
+                Debug.Log("Puerta 1 " + othersDoors[1].transform.eulerAngles);
+                Debug.Log("Puerta 2 " + othersDoors[2].transform.eulerAngles);
+            }
+        }
+        else
+        {
+            if (Keyboard.current.xKey.wasPressedThisFrame) { 
+                Debug.Log("alguna abierta");
+                Debug.Log("Puerta 0 " + othersDoors[0].transform.eulerAngles);
+                Debug.Log("Puerta 1 " + othersDoors[1].transform.eulerAngles);
+                Debug.Log("Puerta 2 " + othersDoors[2].transform.eulerAngles);
+            }
         }
 
 
