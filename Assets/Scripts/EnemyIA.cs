@@ -157,6 +157,9 @@ public class EnemyIA : MonoBehaviour
 
         float distancia = Vector3.Distance(transform.position, playerTransform.position);
         AudioController.Instance.ActualizarVolumenGhost(audioSource, distancia, audioMaxDistancia);
+
+        bool persiguiendo = currentState == State.Chasing;
+        AudioController.Instance.ActualizarPitchGhost(audioSource, persiguiendo);
     }
 }
 

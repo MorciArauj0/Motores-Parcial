@@ -18,4 +18,9 @@ public class AudioController : MonoBehaviour
         fuente.volume = porcentaje * porcentaje;
     }
 
+    public void ActualizarPitchGhost(AudioSource fuente, bool persiguiendo)
+    {
+        float pitchObjetivo = persiguiendo ? 1.2f : 1f;
+        fuente.pitch = Mathf.Lerp(fuente.pitch, pitchObjetivo, Time.deltaTime * 2f);
+    }
 }
