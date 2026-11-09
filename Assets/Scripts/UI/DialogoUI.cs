@@ -67,6 +67,7 @@ public class DialogoUI : MonoBehaviour
 
     public void Cerrar()
     {
+        Time.timeScale = 1f;
         panel.SetActive(false);
         if (playerInput != null) playerInput.ActivateInput();
         Cursor.lockState = CursorLockMode.Locked;
