@@ -33,6 +33,10 @@ public class EnemyIA : MonoBehaviour
     private float sightRangeLose = 25f;
     private float reinicioRange = 2.6f;
 
+    [Header("Música")]
+    [SerializeField] private AudioClip musicaGhost;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float audioMaxDistancia = 40f;
 
     public LayerMask whatIsGround, whatIsPlayer;
     private Material patrolMaterial;
@@ -79,6 +83,8 @@ public class EnemyIA : MonoBehaviour
             Patrolling();
         else if (currentState == State.Chasing)
             ChasePlayer();
+
+        ActualizarAudioDistancia();
     }
 
     private void Patrolling()
@@ -134,4 +140,23 @@ public class EnemyIA : MonoBehaviour
         }
         return transform.position;
     }
+
+    private void OnEnable()
+    {
+        if (audioSource != null && musicaGhost != null)
+        {
+            audioSource.clip = musicaGhost;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+
+    private void ActualizarAudioDistancia()
+    {
+        if (AudioController.Instance == null || audioSource == null) return;
+
+        float distancia = Vector3.Distance(transform.position, playerTransform.position);
+        AudioController.Instance.ActualizarVolumenGhost(audioSource, distancia, audioMaxDistancia);
+    }
 }
+
