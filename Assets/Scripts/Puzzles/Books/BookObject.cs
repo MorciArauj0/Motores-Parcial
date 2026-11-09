@@ -9,6 +9,7 @@ public class BookObject : MonoBehaviour, ICollectable
     [SerializeField] private int whichBook;
     [SerializeField] private ItemID id;
     public AudioSource audio;
+    [SerializeField] private GameObject PuzzleZone;
     public ItemID ID => id;
     public int bookID => whichBook;
 
@@ -25,6 +26,11 @@ public class BookObject : MonoBehaviour, ICollectable
         isCollected = true;
         gameObject.SetActive(false);
         bookPuzzleLogic.AddBook(myself);
+
+        if(PuzzleZone.activeSelf == false)
+        {
+            PuzzleZone.SetActive(true);
+        }
     }
 
 

@@ -10,7 +10,7 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
     [SerializeField] private GameObject puzzleCamera;
     [SerializeField] private GameObject player;
     [SerializeField] private Inventory inventory;
-    [SerializeField] private GameObject raycast;
+    [SerializeField] private GameObject tutorial;
 
     [Header("Selectores")]
     [SerializeField] private GameObject selectedZone;
@@ -44,6 +44,9 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
     private SelectionState currentState = SelectionState.SelectingZone;
     //libro o slot?
 
+    //tutorial una sola vez
+    bool tutorialVisto = false;
+
     void Update()
     {
         if(!puzzleCamera.activeSelf)
@@ -55,12 +58,16 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
          {
             SelectingZone();
             Silence();
-        }
+         }
          else if (currentState == SelectionState.SelectingSlot)
          {
             SelectingSlot();
          }
 
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && tutorial.activeSelf == true)
+        {
+            tutorial.SetActive(false);
+        }
     }
 
     void SelectingZone()
@@ -97,7 +104,7 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
             Debug.Log("selecciona del inventario");
         }
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && tutorial.activeSelf == false)
         {
             PuzzleModeOff();
         }
@@ -186,7 +193,7 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
 
         }
 
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        if(Keyboard.current.escapeKey.wasPressedThisFrame && tutorial.activeSelf == false)
         {
             selectedSlot.SetActive(false);
 
@@ -208,20 +215,23 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
     {
         puzzleCamera.SetActive(true);
         player.SetActive(false);
-        raycast.SetActive(false);
-
+        
         currentState = SelectionState.SelectingZone;
 
         selectedZone.SetActive(false);
         selectedSlot.SetActive(false);
 
+        if(tutorialVisto == false)
+        {
+            tutorial.SetActive(true);
+            tutorialVisto = true;
+        }
     }
 
     public void PuzzleModeOff()
     {
         puzzleCamera.SetActive(false);
         player.SetActive(true);
-        raycast.SetActive(true);
 
         selectedZone.SetActive(false);
         selectedSlot.SetActive(false);

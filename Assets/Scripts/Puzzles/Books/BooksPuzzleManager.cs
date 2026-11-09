@@ -10,7 +10,6 @@ public class BooksPuzzleManager : MonoBehaviour
     [SerializeField] private GameObject reward;
     [SerializeField] private GameObject puzzleCamera;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject raycast;
     [SerializeField] private GameObject chest;
     public bookZone[] slots;
 
@@ -60,7 +59,6 @@ public class BooksPuzzleManager : MonoBehaviour
         animChest.SetTrigger("PuzzleSolved");
         puzzleCamera.SetActive(false);
         player.SetActive(true);
-        raycast.SetActive(true);
 
         BoxCollider myCollider = gameObject.GetComponent<BoxCollider>();
         myCollider.enabled = false;
