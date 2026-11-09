@@ -96,12 +96,13 @@ public class GameManager : MonoBehaviour
         }
         //
 
-        //congelar mouse
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //descongelar mouse
+        //if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
+        // toquen windows
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
