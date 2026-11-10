@@ -1,31 +1,59 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Intro : MonoBehaviour
 {
     [SerializeField] AudioSource dialogo;
-    [SerializeField] GameManager gameManager;
+    [SerializeField] GameManager timeLoop;
+    [SerializeField] GameObject gameManager;
     [SerializeField] private string[] dialogos;
     //[SerializeField] private Dictionary<string, int> subtitulos;
     [SerializeField] private TMP_Text zonaSubtitulos;
     [SerializeField] private GameObject subtitulos;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject camaraIntro;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerIntro;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject reloj;
 
-    private float timer;
+    [SerializeField] private float timer;
+    bool resetTimer = false;
 
     void Start()
-    {
-        zonaSubtitulos.text = dialogos[0];
+    {   
+        
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
+        if(Keyboard.current.escapeKey.wasPressedThisFrame) 
+        {
+            endIntro();
+        }
+
+        //timer += Time.deltaTime;
+        if(dialogo.isPlaying == false)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            timer = dialogo.time;
+        }
+
+        subtitulos.SetActive(true);
+        zonaSubtitulos.text = dialogos[0];
+
+        animIntro();
         ChangeSubtitles();
     }
 
     public void ChangeSubtitles()
     {
+
         if (timer >= 4.08f)
         {
             zonaSubtitulos.text = dialogos[1];
@@ -80,7 +108,46 @@ public class Intro : MonoBehaviour
         }
         if (timer >= 55.84f)
         {
-            subtitulos.SetActive(false);
+            dialogo.Stop();
         }
+    }
+
+    void animIntro()
+    {
+        if (dialogo.isPlaying == false)
+        {
+            if(resetTimer == true)
+            {
+                zonaSubtitulos.text = dialogos[14];
+                panel.SetActive(false);
+                playerIntro.SetActive(true);
+                timer = 0;
+                resetTimer = true;
+            }
+
+            if (timer >= 3f)
+            {
+                zonaSubtitulos.text = dialogos[15];
+                playerIntro.SetActive(false);
+                player.SetActive(true);
+                camaraIntro.SetActive(false);
+            }
+            if (timer >= 3.5f)
+            {
+                timeLoop.timer = 0;
+                endIntro();
+            }
+        }
+    }
+
+    public void endIntro()
+    {
+        panel.SetActive(false);
+        camaraIntro.SetActive(false);
+
+        player.SetActive(true);
+        inventory.SetActive(true);
+        reloj.SetActive(true);
+        gameManager.SetActive(true);
     }
 }
