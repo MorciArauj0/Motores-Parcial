@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public Button menuButton;
     private bool gameOverActivo = false;
 
-
     [Header("Configuración del Loop")]
     [SerializeField] public float loopDuracion = 300f;
 
@@ -146,7 +145,7 @@ public class GameManager : MonoBehaviour
         if (gameOverActivo) return;
 
         gameOverActivo = true;
-
+        
         if (gameOverScreen != null)
         {
             gameOverScreen.SetActive(true);

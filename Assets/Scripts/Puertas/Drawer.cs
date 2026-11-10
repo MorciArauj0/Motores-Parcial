@@ -7,6 +7,7 @@ public class Drawer : MonoBehaviour, IInteractable
     [Header("Variables")]
 
     [SerializeField] private GameObject drawer;
+    [SerializeField] private GameObject key;
     [SerializeField] private Animator anim;
 
     //[SerializeField] private InsideDrawer inside;
@@ -28,14 +29,14 @@ public class Drawer : MonoBehaviour, IInteractable
 
         //inside.Collected += CloseDrawer;
     }
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("zona cajon");
-            Interact();
-        }
-    }
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("zona cajon");
+    //        Interact();
+    //    }
+    //}
 
     public void Interact()
     {
@@ -45,12 +46,13 @@ public class Drawer : MonoBehaviour, IInteractable
             anim.SetBool("Closing", false);
             isOpen = true;
             isClose = false;
+            key.SetActive(true);
             Debug.Log("tendria que abrirse");
         }
 
         if (closeIT == true)
         {
-            if (isOpen == true && isClose == false)
+            if (isOpen == true && isClose == false && key.activeSelf == false)
             {
                 anim.SetBool("Opening", false);
                 anim.SetBool("Closing", true);
@@ -65,10 +67,6 @@ public class Drawer : MonoBehaviour, IInteractable
         Debug.Log("te odio new input system");
     }
 
-    //private void CloseDrawer(bool collected)
-    //{
-    //    lanternCollected = true;
-    //}
 
     public void canCloseDrawer()
     {
