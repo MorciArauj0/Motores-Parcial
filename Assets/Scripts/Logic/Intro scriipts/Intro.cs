@@ -5,50 +5,91 @@ using UnityEngine.InputSystem;
 
 public class Intro : MonoBehaviour
 {
-    [SerializeField] AudioSource dialogo;
-    [SerializeField] GameManager timeLoop;
+    [Header("Activar")]
     [SerializeField] GameObject gameManager;
-    [SerializeField] private string[] dialogos;
-    //[SerializeField] private Dictionary<string, int> subtitulos;
-    [SerializeField] private TMP_Text zonaSubtitulos;
-    [SerializeField] private GameObject subtitulos;
-    [SerializeField] private GameObject panel;
-    [SerializeField] private GameObject camaraIntro;
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameObject playerIntro;
+    [SerializeField] private GameObject player; 
+    [SerializeField] private GameObject playerIntro; // y después desactivar
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject reloj;
 
+    [Header("Desactivar")]
+    [SerializeField] private GameObject subtitulos;
+    [SerializeField] private GameObject omitirIntro;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject camaraIntro;
+
+    [Header("Componentes")]
+    [SerializeField] AudioSource dialogo;
+    [SerializeField] SpawnPoint enemy;
+    [SerializeField] GameManager timeLoop;
+
+    [Header("Variables")]
+    public static Intro Instance;
+    [SerializeField] private string[] dialogos;
+    [SerializeField] private TMP_Text zonaSubtitulos;
     [SerializeField] private float timer;
+
+    [Header("Booleanos")]
     bool resetTimer = false;
+    bool resetLoop = false;
+    bool introOmitida = false;
+    [SerializeField] bool firstLoop = true;
 
     void Start()
-    {   
+    {
         
     }
 
-    void Update()
+    void Awake()
     {
-        if(Keyboard.current.escapeKey.wasPressedThisFrame) 
+        if (Instance == null)
         {
-            endIntro();
-        }
-
-        //timer += Time.deltaTime;
-        if(dialogo.isPlaying == false)
-        {
-            timer += Time.deltaTime;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            timer = dialogo.time;
+            enabled = false;
+            Destroy(gameObject);
+            return;
+        }
+    }
+    void Update()
+    {
+        AsignarObjetos();
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) 
+        {
+            endIntro();
+            omitirIntro.SetActive(false);
+            introOmitida = true;
         }
 
-        subtitulos.SetActive(true);
-        zonaSubtitulos.text = dialogos[0];
+        if(firstLoop) //primer loop
+        {
+            if (Keyboard.current.pKey.wasPressedThisFrame) { Debug.Log("12 loops"); }  
+            if (dialogo.isPlaying == false)
+            {
+                timer += Time.deltaTime;
+                animIntro();
+            }
+            else
+            {
+                enemy.DesactivarEnemigos();
+                timer = dialogo.time;
+                zonaSubtitulos.text = dialogos[0];
+                ChangeSubtitles();
+                subtitulos.SetActive(true);
+            }
+        }
+        else
+        {
+            if (Keyboard.current.pKey.wasPressedThisFrame) { Debug.Log(" menos de 12 loops"); }
+            endIntro();
+            omitirIntro.SetActive(false);
+            introOmitida = true;
+        }
 
-        animIntro();
-        ChangeSubtitles();
     }
 
     public void ChangeSubtitles()
@@ -116,38 +157,70 @@ public class Intro : MonoBehaviour
     {
         if (dialogo.isPlaying == false)
         {
-            if(resetTimer == true)
+            if(resetTimer == false)
             {
-                zonaSubtitulos.text = dialogos[14];
-                panel.SetActive(false);
-                playerIntro.SetActive(true);
+                if(introOmitida == false)
+                {
+                    zonaSubtitulos.text = dialogos[14];
+                    panel.SetActive(false);
+                    playerIntro.SetActive(true);
+                }
+                
                 timer = 0;
                 resetTimer = true;
             }
 
-            if (timer >= 3f)
-            {
-                zonaSubtitulos.text = dialogos[15];
-                playerIntro.SetActive(false);
-                player.SetActive(true);
-                camaraIntro.SetActive(false);
-            }
             if (timer >= 3.5f)
             {
-                timeLoop.timer = 0;
-                endIntro();
-            }
+                zonaSubtitulos.text = dialogos[15];
+                playerIntro.SetActive(false);                
+                camaraIntro.SetActive(false);
+
+                player.SetActive(true);
+
+                if (timer >= 4.5f && resetLoop == false)
+                {
+                    timeLoop.timer = 0;
+                    omitirIntro.SetActive(false);
+                    subtitulos.SetActive(false);
+                    endIntro();
+                    resetLoop = true;
+                }
+            }  
         }
     }
 
     public void endIntro()
     {
+        //en caso de saltar la intro
+        dialogo.Stop();
+        subtitulos.SetActive(false);
         panel.SetActive(false);
         camaraIntro.SetActive(false);
-
+        playerIntro.SetActive(false);
         player.SetActive(true);
+        //en caso de saltar la intro
+
         inventory.SetActive(true);
         reloj.SetActive(true);
         gameManager.SetActive(true);
+
+        firstLoop = false;
+    }
+
+    void AsignarObjetos()
+    {
+        if(player == null || inventory == null || reloj == null)
+        {
+            enemy = FindFirstObjectByType<SpawnPoint>();
+            player = GameObject.FindWithTag("player");
+            inventory = GameObject.FindWithTag("Inventory");
+            reloj = GameObject.FindWithTag("UIReloj");
+            gameManager = GameObject.FindWithTag("gameManager");
+
+            player.SetActive(false);
+            inventory.SetActive(false);
+            reloj.SetActive(false);
+        }
     }
 }

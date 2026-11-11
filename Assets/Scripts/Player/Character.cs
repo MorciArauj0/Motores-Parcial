@@ -46,7 +46,6 @@ public class Character : MonoBehaviour
     [SerializeField] private float gravityMultiplier = 3f;
     private float verticalVelocity;
 
-
     //============================================
     //REFERENCIAS Y VARIABLES INTERNAS
     //============================================

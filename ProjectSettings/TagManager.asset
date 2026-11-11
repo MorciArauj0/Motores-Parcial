@@ -8,6 +8,11 @@ TagManager:
   - victory
   - Reiniciar
   - Menu
+  - UIReloj
+  - Inventory
+  - player
+  - spawnPoint
+  - gameManager
   layers:
   - Default
   - TransparentFX
