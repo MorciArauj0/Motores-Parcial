@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public Button menuButton;
     private bool gameOverActivo = false;
+    private bool victoryActivo = false;
 
     [Header("Configuración del Loop")]
     [SerializeField] public float loopDuracion = 300f;
@@ -54,14 +55,22 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    {
+    { 
         gameOverActivo = false;
         ReferenciasUI();
+
+        
     }
 
     void Update()
     {
         if (gameOverActivo) return;
+
+        if (gameOverScreen.activeSelf && !gameOverActivo || victoryScreen.activeSelf && !victoryActivo)
+        {
+            gameOverScreen.SetActive(false);
+            victoryScreen.SetActive(false);
+        }
 
         timer += Time.deltaTime;
 
@@ -163,6 +172,8 @@ public class GameManager : MonoBehaviour
         {
             victoryScreen.SetActive(true);
         }
+
+        victoryActivo = true;
     }
 
     public void ReiniciarEscena()
@@ -207,6 +218,9 @@ public class GameManager : MonoBehaviour
         gameOverScreen = GameObject.FindWithTag("gameOver");
         victoryScreen = GameObject.FindWithTag("victory");
 
+        //victoryScreen.SetActive(false);
+        //gameOverScreen.SetActive(false);
+
         if (gameOverScreen != null)
         {
             Button[] botones = gameOverScreen.GetComponentsInChildren<Button>(true);
@@ -226,12 +240,12 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            gameOverScreen.SetActive(false);
+            //gameOverScreen.SetActive(false);
         }
 
         if (victoryScreen != null)
         {
-            victoryScreen.SetActive(false);
+            //victoryScreen.SetActive(false);
         }
     }
 }
