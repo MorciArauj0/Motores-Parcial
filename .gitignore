@@ -106,3 +106,5 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
 ProjectSettings/Packages/com.unity.probuilder/Settings.json
+
+OfficeBreakout/
