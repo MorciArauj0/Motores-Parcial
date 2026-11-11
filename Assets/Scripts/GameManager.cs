@@ -15,12 +15,11 @@ public class GameManager : MonoBehaviour
     public Button menuButton;
     private bool gameOverActivo = false;
 
-
     [Header("Configuración del Loop")]
     [SerializeField] public float loopDuracion = 300f;
 
     [SerializeField] public int loopsRestantes = 5;
-    private float timer = 0f;
+    public float timer = 0f;
     public float TiempoActual => timer;
 
     [Header("Sonido de lámpara")]
@@ -96,12 +95,13 @@ public class GameManager : MonoBehaviour
         }
         //
 
-        //congelar mouse
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //descongelar mouse
+        //if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
+        // toquen windows
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         if (gameOverActivo) return;
 
         gameOverActivo = true;
-
+        
         if (gameOverScreen != null)
         {
             gameOverScreen.SetActive(true);

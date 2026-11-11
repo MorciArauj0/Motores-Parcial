@@ -64,6 +64,7 @@ public class CompuProta : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        Time.timeScale = 0f;
         if (!sePresento) MostrarPresentacion(0);
         else MostrarMenu();
     }
