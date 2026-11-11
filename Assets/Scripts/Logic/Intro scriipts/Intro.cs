@@ -7,7 +7,7 @@ public class Intro : MonoBehaviour
 {
     [Header("Activar")]
     [SerializeField] GameObject gameManager;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject player; 
     [SerializeField] private GameObject playerIntro; // y después desactivar
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject reloj;
@@ -20,34 +20,54 @@ public class Intro : MonoBehaviour
 
     [Header("Componentes")]
     [SerializeField] AudioSource dialogo;
+    [SerializeField] SpawnPoint enemy;
     [SerializeField] GameManager timeLoop;
 
     [Header("Variables")]
+    public static Intro Instance;
     [SerializeField] private string[] dialogos;
     [SerializeField] private TMP_Text zonaSubtitulos;
     [SerializeField] private float timer;
+
+    [Header("Booleanos")]
     bool resetTimer = false;
     bool resetLoop = false;
     bool introOmitida = false;
-    bool primerLoop = true;
+    [SerializeField] bool firstLoop = true;
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        
     }
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            enabled = false;
+            Destroy(gameObject);
+            return;
+        }
+    }
     void Update()
     {
-        if(Keyboard.current.escapeKey.wasPressedThisFrame) 
+        AsignarObjetos();
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) 
         {
             endIntro();
             omitirIntro.SetActive(false);
             introOmitida = true;
         }
 
-        //timer += Time.deltaTime;
-        if(primerLoop == true)
+        if(firstLoop) //primer loop
         {
+            if (Keyboard.current.pKey.wasPressedThisFrame) { Debug.Log("12 loops"); }  
             if (dialogo.isPlaying == false)
             {
                 timer += Time.deltaTime;
@@ -55,6 +75,7 @@ public class Intro : MonoBehaviour
             }
             else
             {
+                enemy.DesactivarEnemigos();
                 timer = dialogo.time;
                 zonaSubtitulos.text = dialogos[0];
                 ChangeSubtitles();
@@ -63,6 +84,7 @@ public class Intro : MonoBehaviour
         }
         else
         {
+            if (Keyboard.current.pKey.wasPressedThisFrame) { Debug.Log(" menos de 12 loops"); }
             endIntro();
             omitirIntro.SetActive(false);
             introOmitida = true;
@@ -156,7 +178,7 @@ public class Intro : MonoBehaviour
 
                 player.SetActive(true);
 
-                if (timer >= 4f && resetLoop == false)
+                if (timer >= 4.5f && resetLoop == false)
                 {
                     timeLoop.timer = 0;
                     omitirIntro.SetActive(false);
@@ -183,6 +205,22 @@ public class Intro : MonoBehaviour
         reloj.SetActive(true);
         gameManager.SetActive(true);
 
-        primerLoop = false;
+        firstLoop = false;
+    }
+
+    void AsignarObjetos()
+    {
+        if(player == null || inventory == null || reloj == null)
+        {
+            enemy = FindFirstObjectByType<SpawnPoint>();
+            player = GameObject.FindWithTag("player");
+            inventory = GameObject.FindWithTag("Inventory");
+            reloj = GameObject.FindWithTag("UIReloj");
+            gameManager = GameObject.FindWithTag("gameManager");
+
+            player.SetActive(false);
+            inventory.SetActive(false);
+            reloj.SetActive(false);
+        }
     }
 }
