@@ -29,12 +29,12 @@ public class BathroomPuzzle : MonoBehaviour
     private bool llaveColectada = false;
     private bool puzzleComplete = false;
 
-    Vector3 abierto = new Vector3(0, 90, 0);
+    Vector3 abierto = new Vector3(0, 90f, 0);
 
     void Update()
     {
         
-        Vector3 rotacionPuertaCorrecta = correctDoor.transform.eulerAngles;
+        int rotacionPuertaCorrecta = (int) correctDoor.transform.eulerAngles.y;
 
         //recolección de objetos
         for (int i = 0; i <= 2; i++)
@@ -72,26 +72,6 @@ public class BathroomPuzzle : MonoBehaviour
         {
             allDoorsClose = false;
         }
-
-        
-        
-        //for (int i = 0; i <3; i++)
-        //{
-        //    Vector3 rotacionActual = othersDoors[i].transform.eulerAngles;
-
-        //    if (Keyboard.current.zKey.wasPressedThisFrame) { Debug.Log("Puerta " + i + " " + rotacionActual); }
-
-        //    if (rotacionActual != new Vector3(0, 90, 0))
-        //    {
-        //        allDoorsClose = true;
-        //    }
-        //    else 
-        //    {
-        //        allDoorsClose = false;
-        //        break;
-        //    }
-        //}
-
         
         if (allDoorsClose == true)
         {
@@ -114,7 +94,7 @@ public class BathroomPuzzle : MonoBehaviour
 
 
         //puerta correcta
-        if (rotacionPuertaCorrecta == new Vector3(0, 90, 0))
+        if (rotacionPuertaCorrecta == 90)
         {
             correctDoorOpen = true;
             if (Keyboard.current.hKey.wasPressedThisFrame) { Debug.Log("puerta correcta abierta"); }

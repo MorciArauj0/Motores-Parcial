@@ -38,7 +38,9 @@ public class CompuProta : MonoBehaviour, IInteractable
         }
         else
         {
+            enabled = false;
             Destroy(gameObject);
+            return;
         }
     }
 
