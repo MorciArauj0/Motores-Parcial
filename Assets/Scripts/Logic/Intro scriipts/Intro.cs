@@ -58,7 +58,7 @@ public class Intro : MonoBehaviour
     {
         AsignarObjetos();
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame) 
+        if (Keyboard.current.eKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame) 
         {
             endIntro();
             omitirIntro.SetActive(false);
@@ -66,8 +66,7 @@ public class Intro : MonoBehaviour
         }
 
         if(firstLoop) //primer loop
-        {
-            if (Keyboard.current.pKey.wasPressedThisFrame) { Debug.Log("12 loops"); }  
+        { 
             if (dialogo.isPlaying == false)
             {
                 timer += Time.deltaTime;
@@ -84,7 +83,6 @@ public class Intro : MonoBehaviour
         }
         else
         {
-            if (Keyboard.current.pKey.wasPressedThisFrame) { Debug.Log(" menos de 12 loops"); }
             endIntro();
             omitirIntro.SetActive(false);
             introOmitida = true;

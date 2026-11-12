@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Pantallas")]
     public GameObject gameOverScreen;
-    public GameObject victoryScreen;
+    public GameObject Intro;
+    public GameObject victoryText;
+    public GameObject gameOverText;
     public Button restartButton;
     public Button menuButton;
     private bool gameOverActivo = false;
@@ -59,17 +61,19 @@ public class GameManager : MonoBehaviour
         gameOverActivo = false;
         ReferenciasUI();
 
-        
     }
 
     void Update()
     {
         if (gameOverActivo) return;
 
-        if (gameOverScreen.activeSelf && !gameOverActivo || victoryScreen.activeSelf && !victoryActivo)
+        if (gameOverScreen.activeSelf && gameOverActivo || gameOverScreen.activeSelf && victoryActivo)
+        {
+            gameOverScreen.SetActive(true);
+        }
+        else
         {
             gameOverScreen.SetActive(false);
-            victoryScreen.SetActive(false);
         }
 
         timer += Time.deltaTime;
@@ -158,6 +162,7 @@ public class GameManager : MonoBehaviour
         if (gameOverScreen != null)
         {
             gameOverScreen.SetActive(true);
+            victoryText.SetActive(false);
         }
 
         Cursor.lockState = CursorLockMode.None;
@@ -168,12 +173,21 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
-        if (victoryScreen != null)
-        {
-            victoryScreen.SetActive(true);
-        }
+        if (victoryActivo) return;
 
         victoryActivo = true;
+
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(true);
+            gameOverText.SetActive(false);
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        Time.timeScale = 0f;
+
     }
 
     public void ReiniciarEscena()
@@ -182,6 +196,7 @@ public class GameManager : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
+            Destroy(Intro);
             Destroy(GameManager.Instance.gameObject);
         }
         SceneManager.LoadScene("Office");
@@ -193,6 +208,7 @@ public class GameManager : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
+            Destroy(Intro);
             Destroy(GameManager.Instance.gameObject);
         }
         SceneManager.LoadScene("Start");
@@ -216,10 +232,8 @@ public class GameManager : MonoBehaviour
     void ReferenciasUI()
     {
         gameOverScreen = GameObject.FindWithTag("gameOver");
-        victoryScreen = GameObject.FindWithTag("victory");
-
-        //victoryScreen.SetActive(false);
-        //gameOverScreen.SetActive(false);
+        gameOverText = GameObject.FindWithTag("gameOverTXT");
+        victoryText = GameObject.FindWithTag("victoryTXT");
 
         if (gameOverScreen != null)
         {
@@ -240,12 +254,12 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            //gameOverScreen.SetActive(false);
         }
+    }
 
-        if (victoryScreen != null)
-        {
-            //victoryScreen.SetActive(false);
-        }
+    public void VictoryText()
+    {
+        victoryText.SetActive(true);
+        gameOverText.SetActive(false);
     }
 }
