@@ -85452,7 +85452,7 @@ MonoBehaviour:
   sonidoPuerta: {fileID: 8300000, guid: 2560122f1cf1f08478126a817edee187, type: 3}
   grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
   pivot: {fileID: 1682773252}
-  door: {fileID: 0}
+  door: {fileID: 531757246}
 --- !u!114 &531757249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85468,6 +85468,8 @@ MonoBehaviour:
   puerta: {fileID: 606231967}
   inventory: {fileID: 602015428}
   itemMust: 7
+  sonidoPuerta: {fileID: 8300000, guid: 6f31d0e6a05a6d246864c51ce631e1e7, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!1 &532880837
 GameObject:
   m_ObjectHideFlags: 0
@@ -102239,6 +102241,8 @@ MonoBehaviour:
   puerta: {fileID: 606231967}
   inventory: {fileID: 602015428}
   itemMust: 7
+  sonidoPuerta: {fileID: 8300000, guid: 0a942db18a5f45f41839430191879ac5, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!1001 &606913033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270593,6 +270597,8 @@ MonoBehaviour:
   puerta: {fileID: 1230484285}
   inventory: {fileID: 602015428}
   itemMust: 9
+  sonidoPuerta: {fileID: 8300000, guid: 0a942db18a5f45f41839430191879ac5, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!1 &1231970079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3362697723108016565, guid: ca29cde4145bc214b99962de1c3bb076, type: 3}
@@ -300918,6 +300924,8 @@ MonoBehaviour:
   puerta: {fileID: 1383258655}
   inventory: {fileID: 602015428}
   itemMust: 9
+  sonidoPuerta: {fileID: 8300000, guid: 0a942db18a5f45f41839430191879ac5, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!4 &1383497034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6115ad9b238f0f84daedea4b92a60c8e, type: 3}
@@ -334991,8 +334999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
-  sonidoPuerta: {fileID: 0}
-  grupoSFX: {fileID: 0}
+  sonidoPuerta: {fileID: 8300000, guid: 1d8860a934566564f840d5223855de66, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
   pivot: {fileID: 1564824728}
   door: {fileID: 606231965}
 --- !u!95 &1564824733
@@ -336062,6 +336070,8 @@ MonoBehaviour:
   puerta: {fileID: 1571196975}
   inventory: {fileID: 602015428}
   itemMust: 5
+  sonidoPuerta: {fileID: 8300000, guid: 1d8860a934566564f840d5223855de66, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!43 &1571550305
 Mesh:
   m_ObjectHideFlags: 0
@@ -359454,8 +359464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puertas
   openAngle: -90
-  sonidoPuerta: {fileID: 0}
-  grupoSFX: {fileID: 0}
+  sonidoPuerta: {fileID: 8300000, guid: 1d8860a934566564f840d5223855de66, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
   pivot: {fileID: 1682773252}
   door: {fileID: 531757246}
 --- !u!95 &1682773257
@@ -414316,6 +414326,8 @@ MonoBehaviour:
   puerta: {fileID: 2089427629}
   inventory: {fileID: 602015428}
   itemMust: 6
+  sonidoPuerta: {fileID: 8300000, guid: 6f31d0e6a05a6d246864c51ce631e1e7, type: 3}
+  grupoSFX: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
 --- !u!114 &2089427629
 MonoBehaviour:
   m_ObjectHideFlags: 0
