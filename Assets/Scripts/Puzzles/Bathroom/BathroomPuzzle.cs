@@ -29,7 +29,9 @@ public class BathroomPuzzle : MonoBehaviour
     private bool llaveColectada = false;
     private bool puzzleComplete = false;
 
-    Vector3 abierto = new Vector3(0, 90f, 0);
+    //Vector3 abierto = new Vector3(0, 90f, 0);
+    int abierto = 90;
+    
 
     void Update()
     {
@@ -64,7 +66,7 @@ public class BathroomPuzzle : MonoBehaviour
 
 
         //puertas
-        if(othersDoors[0].transform.eulerAngles != abierto && othersDoors[1].transform.eulerAngles != abierto && othersDoors[2].transform.eulerAngles != abierto)
+        if((int) othersDoors[0].transform.eulerAngles.y != abierto && (int) othersDoors[1].transform.eulerAngles.y != abierto && (int) othersDoors[2].transform.eulerAngles.y != abierto)
         {
             allDoorsClose = true;
         }

@@ -433066,6 +433066,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1073213912}
     - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422709180685563, guid: 3da9041e466fbe84d93691a259325084, type: 3}
       propertyPath: grupoSFX
       value: 
       objectReference: {fileID: 5632233565038101447, guid: 5ec1ee8f72ea67e45aa2b581e0edd015, type: 2}
@@ -433116,6 +433120,10 @@ PrefabInstance:
     - target: {fileID: 141054361348373637, guid: 3da9041e466fbe84d93691a259325084, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.013899893
+      objectReference: {fileID: 0}
+    - target: {fileID: 302372292991874226, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: TiltAxis.Range.y
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 615992953245064795, guid: 3da9041e466fbe84d93691a259325084, type: 3}
       propertyPath: inventoryUI
@@ -433584,6 +433592,10 @@ PrefabInstance:
     - target: {fileID: 5433288331552491842, guid: 3da9041e466fbe84d93691a259325084, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.1098242
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782565905163420602, guid: 3da9041e466fbe84d93691a259325084, type: 3}
+      propertyPath: AvoidObstacles.IgnoreTag
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5782565905163420602, guid: 3da9041e466fbe84d93691a259325084, type: 3}
       propertyPath: AvoidObstacles.CollisionFilter.m_Bits
