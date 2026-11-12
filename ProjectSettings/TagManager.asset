@@ -13,6 +13,8 @@ TagManager:
   - player
   - spawnPoint
   - gameManager
+  - gameOverTXT
+  - victoryTXT
   layers:
   - Default
   - TransparentFX

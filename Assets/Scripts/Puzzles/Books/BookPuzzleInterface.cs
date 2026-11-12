@@ -64,7 +64,7 @@ public class BookPuzzleInterface : MonoBehaviour, IInteractable
             SelectingSlot();
          }
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame && tutorial.activeSelf == true)
+        if (Keyboard.current.eKey.wasPressedThisFrame && tutorial.activeSelf == true || Mouse.current.leftButton.wasPressedThisFrame && tutorial.activeSelf == true)
         {
             tutorial.SetActive(false);
         }
